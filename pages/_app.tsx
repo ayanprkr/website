@@ -1,4 +1,4 @@
-import { ChakraProvider, Box, Skeleton, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, Box, Skeleton, extendTheme, useColorMode } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 import Navbar from '../components/Navabr'
 import useSWR from 'swr'
@@ -29,6 +29,9 @@ const DiscordStatus: NextComponentType = () => {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { colorMode, toggleColorMode } = useColorMode()
+  
+  if (colorMode === 'light') toggleColorMode()
   
   return (
     <ChakraProvider>
