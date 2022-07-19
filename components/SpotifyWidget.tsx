@@ -36,8 +36,8 @@ const SpotifyWidget: NextComponentType = () => {
             <Box>
                 <Popover placement="left-end" offset={[0, 20]}>
                     <PopoverTrigger>
-                        <Button py={[7, 7, 7]}>
-                            <FontAwesomeIcon icon={faHeadphonesSimple} size={'2x'} color={'#68D391'} />
+                        <Button py={5} px={3}>
+                            <FontAwesomeIcon icon={faHeadphonesSimple} size={'1x'} color={'#68D391'} />
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent borderColor={'transparent'}>
@@ -64,8 +64,8 @@ const SpotifyWidget: NextComponentType = () => {
         <Box>
             <Popover placement="left-end" offset={[0, 20]}>
                 <PopoverTrigger>
-                    <Button py={[7, 7, 7]} disabled>
-                        <FontAwesomeIcon icon={faHeadphonesSimple} size={'2x'} color={'#A0AEC0'} />
+                    <Button py={5} px={3} disabled>
+                        <FontAwesomeIcon icon={faHeadphonesSimple} size={'1x'} color={'#A0AEC0'} />
                     </Button>
                 </PopoverTrigger>
             </Popover>
