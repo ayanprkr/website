@@ -29,12 +29,10 @@ const Navbar: NextComponentType = () => {
                         <Button as="a" variant='ghost'>Blogs</Button>
                     </Link>
                 </Flex>
-                <Box>
-                    <Flex gap={5} direction={'row'} alignItems={'center'}>
+                    <Flex gap={1} direction={'row'} alignItems={'center'}>
                         <SpotifyWidget />
                         <ColorModeSwitch />
                     </Flex>
-                </Box>
             </StickyNav>
         </>
     )
