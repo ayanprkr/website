@@ -23,7 +23,7 @@ import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons"
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 const SpotifyWidget: NextComponentType = () => {
-    const { data, error } = useSWR("/api/spotify", fetcher)
+    const { data, error } = useSWR("/api/spotify", fetcher, { refreshInterval: 5000 })
 
     if (error || !data) {
         return (
@@ -34,10 +34,10 @@ const SpotifyWidget: NextComponentType = () => {
 
     if (data.data.spotify) {
         return (
-            <Container m={0}>
+            <Box m={0}>
                 <Popover placement="bottom-end" offset={[0, 20]}>
                     <PopoverTrigger>
-                        <Button py={5} px={3}>
+                        <Button>
                             <FontAwesomeIcon icon={faHeadphonesSimple} size={'1x'} color={'#68D391'} />
                         </Button>
                     </PopoverTrigger>
@@ -57,15 +57,15 @@ const SpotifyWidget: NextComponentType = () => {
                         </PopoverBody>
                     </PopoverContent>
                 </Popover>
-            </Container>
+            </Box>
         )
     }
 
     return (
-        <Box>
-            <Popover placement="left-end" offset={[0, 20]}>
+        <Box m={0}>
+            <Popover placement="bottom-end" offset={[0, 20]}>
                 <PopoverTrigger>
-                    <Button py={5} px={3} disabled>
+                    <Button disabled>
                         <FontAwesomeIcon icon={faHeadphonesSimple} size={'1x'} color={'#A0AEC0'} />
                     </Button>
                 </PopoverTrigger>
