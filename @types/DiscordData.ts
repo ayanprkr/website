@@ -1,4 +1,4 @@
-export interface DiscordData {
+export type DiscordData = {
     success: boolean,
     data: {
         discord_user: {

@@ -1,4 +1,4 @@
-export interface SpotifyData {
+export type SpotifyData = {
     success: boolean,
     data: {
         spotify?: {
