@@ -1,8 +1,17 @@
-import { ChakraProvider, Box, Skeleton, extendTheme, useColorMode } from '@chakra-ui/react'
+import { ChakraProvider, Box, Skeleton, extendTheme, useColorMode, type ThemeConfig } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 import Navbar from '../components/Navabr'
 import useSWR from 'swr'
 import { NextComponentType } from 'next'
+
+const theme: ThemeConfig = extendTheme({
+  fonts: {
+      heading: 'IBM Ples Mono, monospace',
+      body: 'IBM Plex Mono, monospace',
+  },
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+})
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json()) 
 
@@ -34,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (colorMode === 'light') toggleColorMode()
   
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <DiscordStatus />
       <Navbar />
       <Component {...pageProps} />

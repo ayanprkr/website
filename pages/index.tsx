@@ -12,45 +12,29 @@ const Home: NextPage = () => {
       <Flex direction={'column'} px={[6, 10, 14]} py={2} mt={8} mb={[0, 0, 8]} mx="auto">
 
         {/* HERO SECTION */}
-        <Heading>Hey there! 👋</Heading>
-        <Flex direction={'column'} mt={[2, 6, 6]}>
+        <Flex direction={'column'} my={[2, 6, 6]}>
           <Text fontSize={['sm', 'lg', 'lg']}>
-            I&apos;m Ayan, a 16 year old developer and progamming enthusiast from India. I&apos;m interested in Machine Learning, Deep Learning and Full-Stack development.
+            hey there!
             <br /><br />
-            I started programming back in 2020 when COVID-19 was at its peak. I was in my 10th grade but still I managed to learn programming, most of the time I created Discord Bots using NodeJS (technically copying codes from github). At first I had no interest in programming and I used to code because I was kinda bored with my 10th grade syllabus, then I started learning properly and was able to implement my own idas to discord bots. Later when my boards got cancelled, I started learning more languages like Python, Go, etc. and also beautiful frameworks like React, Vue, NextJS, etc.
+            i&apos;m ayan, a 16 year old programming enthusiast from india currently a student and interested in machine learning.
             <br /><br />
-            Since then, my proficiency in programming has considerably increased and now I&apos;m pursuing an integrated B-Tech degree in CSE.
-            <br /><br />
-            P.S - The green/red/yellow/gray line above indicates my discord status 😎
+            p.s - the green/red/yellow/gray line above indicates my discord status 😎
           </Text>
         </Flex>
-        {/* DASBOARD SECTION */}
-        {/*<Flex direction={['column', 'row', 'row']} mt={'6'} gap={['4', '10', '10']}>
-          <Box maxW={['xs', 'sm', 'sm']} py={'4'} px={'6'} borderWidth={'1px'} borderRadius={'lg'} overflow={'hidden'}>
-            <Box wordBreak={'break-word'} fontSize={'2xl'} fontWeight={'bold'} as={'h2'} lineHeight={'tight'}>
-              LeetCode Acceptance Rate
-            </Box>
-            <Box wordBreak={'break-word'} fontSize={'lg'} fontWeight={'regular'} as={'h4'} lineHeight={'tight'}>
-              Lorem Ipsum
-            </Box>
-          </Box>
-          <Box maxW={['xs', 'sm', 'sm']} py={'4'} px={'6'} borderWidth={'1px'} borderRadius={'lg'} overflow={'hidden'}>
-            <Box wordBreak={'break-word'} fontSize={'2xl'} fontWeight={'bold'} as={'h2'} lineHeight={'tight'}>
-              Github Contribution
-            </Box>
-            <Box wordBreak={'break-word'} fontSize={'lg'} fontWeight={'regular'} as={'h4'} lineHeight={'tight'}>
-              Lorem Ipsum
-            </Box>
-          </Box>
-          <Box maxW={['xs', 'sm', 'sm']} py={'4'} px={'6'} borderWidth={'1px'} borderRadius={'lg'} overflow={'hidden'}>
-            <Box wordBreak={'break-word'} fontSize={'2xl'} fontWeight={'bold'} as={'h2'} lineHeight={'tight'}>
-              Twitter Followers
-            </Box>
-            <Box wordBreak={'break-word'} fontSize={'lg'} fontWeight={'regular'} as={'h4'} lineHeight={'tight'}>
-              Lorem Ipsum
-            </Box>
-          </Box>
-        </Flex>*/}
+
+        <Flex direction={'column'} my={[2, 6, 6]}>
+          <Heading fontSize={['lg', '2xl', '2xl']}>Skills</Heading>
+          <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
+            here&apos;s my essentials.
+          </Text>
+        </Flex>
+
+        <Flex direction={'column'} my={[2, 6, 6]}>
+          <Heading fontSize={['lg', '2xl', '2xl']}>Projects</Heading>
+          <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
+            none, i&apos;m useless.
+          </Text>
+        </Flex>
       </Flex>
     </>
   )

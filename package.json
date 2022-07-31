@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/ibm-plex-mono": "^4.5.10",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
