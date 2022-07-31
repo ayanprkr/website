@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getDiscordData } from "../../data/discordData"
-import { DiscordData } from "../../@types/DiscordData"
+import { getDiscordData } from "../../src/discordData"
+import { DiscordData } from "../../src/@types/DiscordData"
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<DiscordData>) {

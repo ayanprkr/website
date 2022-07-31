@@ -3,8 +3,9 @@ import {
   Flex,
   Text,
   Heading,
-  Box
+  Tag
 } from '@chakra-ui/react'
+
 
 const Home: NextPage = () => {
   return (
@@ -23,16 +24,38 @@ const Home: NextPage = () => {
         </Flex>
 
         <Flex direction={'column'} my={[2, 6, 6]}>
-          <Heading fontSize={['lg', '2xl', '2xl']}>Skills</Heading>
+          <Heading fontSize={['lg', '2xl', '2xl']}>skills</Heading>
           <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
-            here&apos;s my essentials.
+            languages &amp; technologies i currently know
+            <Flex direction={'column'} gap={4}>
+              <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
+                <Tag>javascript</Tag>
+                <Tag>typescript</Tag>
+                <Tag>python</Tag>
+                <Tag>html/css</Tag>
+                <Tag>c/c++</Tag>
+                <Tag>react</Tag>
+                <Tag>nextjs</Tag>
+                <Tag>vue</Tag>
+                <Tag>nuxtjs</Tag>
+                <Tag>express</Tag>
+                <Tag>mongodb</Tag>
+              </Flex>
+            </Flex>
           </Text>
         </Flex>
 
         <Flex direction={'column'} my={[2, 6, 6]}>
-          <Heading fontSize={['lg', '2xl', '2xl']}>Projects</Heading>
+          <Heading fontSize={['lg', '2xl', '2xl']}>projects</Heading>
           <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
             none, i&apos;m useless.
+          </Text>
+        </Flex>
+
+        <Flex direction={'column'} my={[2, 6, 6]}>
+          <Heading fontSize={['lg', '2xl', '2xl']}>blogs</Heading>
+          <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
+            currently cooking some...
           </Text>
         </Flex>
       </Flex>
