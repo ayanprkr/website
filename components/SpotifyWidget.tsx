@@ -8,14 +8,10 @@ import {
     Button,
     PopoverContent,
     PopoverArrow,
-    PopoverCloseButton,
-    PopoverHeader,
     PopoverBody,
-    PopoverFooter,
     Text,
     Flex,
     Heading,
-    Container
 } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons"
