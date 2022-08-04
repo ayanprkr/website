@@ -6,8 +6,8 @@ import { NextComponentType } from 'next'
 
 const theme: ThemeConfig = extendTheme({
   fonts: {
-      heading: 'IBM Ples Mono, monospace',
-      body: 'IBM Plex Mono, monospace',
+    heading: 'IBM Ples Mono, monospace',
+    body: 'IBM Plex Mono, monospace',
   },
   initialColorMode: 'dark',
   useSystemColorMode: false,
@@ -37,11 +37,7 @@ const DiscordStatus: NextComponentType = () => {
   }
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { colorMode, toggleColorMode } = useColorMode()
-  
-  if (colorMode === 'light') toggleColorMode()
-  
+function MyApp({ Component, pageProps }: AppProps) {  
   return (
     <ChakraProvider theme={theme}>
       <DiscordStatus />
