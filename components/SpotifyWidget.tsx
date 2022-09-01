@@ -1,4 +1,4 @@
-import type { NextComponentType } from "next"
+import React from "react";
 import useSWR, { Key, Fetcher } from "swr"
 import Image from "next/image"
 import {
@@ -18,7 +18,7 @@ import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons"
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-const SpotifyWidget: NextComponentType = () => {
+const SpotifyWidget: React.FC = () => {
     const { data, error } = useSWR("/api/spotify", fetcher)
 
     if (error || !data) {

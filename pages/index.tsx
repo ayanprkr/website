@@ -5,7 +5,9 @@ import {
   Heading,
   Tag
 } from '@chakra-ui/react'
- 
+import Blog from '../components/Blog'
+import Project from '../components/Project'
+
 const Home: NextPage = () => {
   return (
     <>
@@ -48,8 +50,14 @@ const Home: NextPage = () => {
         <Flex direction={'column'} my={[2, 6, 6]}>
           <Heading fontSize={['lg', '2xl', '2xl']}>projects</Heading>
           <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
-            none, i&apos;m useless.
+            here are some of the cool stuffs i make when i&apos;m lonely
           </Text>
+          <Flex direction={'column'} gap={4}>
+              <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
+                <Project url="https://github.com/MetalOoze05/friday-api" name="friday api" desc="A REST API which provides you the information of any discord account including their Spotify &amp; VS-Code activity!" date={1662030878394} />
+                <Project url="https://github.com/MetalOoze05/dynamic-twitter-header" name="dynamic twitter header" desc="Fetches a quote from an external api and generates an image which can be uploaded to twitter as a profile banner." date={1662030878394} />
+              </Flex>
+          </Flex>
         </Flex>
  
         <Flex direction={'column'} my={[2, 6, 6]}>
@@ -57,6 +65,12 @@ const Home: NextPage = () => {
           <Text my={[1, 3, 3]} fontSize={['sm', 'lg', 'lg']}>
             currently cooking some...
           </Text>
+          <Flex direction={'column'} gap={4}>
+              <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
+                <Blog />
+                <Blog />
+              </Flex>
+          </Flex>
         </Flex>
       </Flex>
     </>

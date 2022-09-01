@@ -1,4 +1,4 @@
-import type { NextPage, NextComponentType } from 'next'
+import React from "react";
 import {
     Alert,
     AlertIcon,
@@ -12,7 +12,7 @@ interface Props {
     description?: string
 }
 
-const FadeAlert: NextPage<Props> = (props) => {
+const FadeAlert: React.FC<Props> = (props) => {
     return (
         <>
             <ScaleFade initialScale={0.9} in={true}>
