@@ -15,10 +15,10 @@ const Navbar: React.FC = () => {
             <Flex position='relative' top={0} flexDirection='row' justifyContent='space-between' alignItems='center' width='100%' as='nav' px={[6, 14, 14]} py={2} mt={8} mb={[0, 0, 8]} mx='auto' gap={10}>
                 <Flex gap={5}>
                     <Link href="/" passHref>
-                        <Button as="a">Home</Button>
+                        <Button as="a">home</Button>
                     </Link>
                     <Link href="/blogs" passHref>
-                        <Button as="a" variant='ghost'>Blogs</Button>
+                        <Button as="a" variant='ghost'>blogs</Button>
                     </Link>
                 </Flex>
                     <Flex gap={5} direction={'row'} alignItems={'center'}>

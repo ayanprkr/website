@@ -53,8 +53,8 @@ const Project: React.FC<Props> = ({ url, name, desc, date }) => {
                         src={'https://avatars.githubusercontent.com/u/38457291'}
                     />
                     <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                        <Text fontWeight={600}>Ayan (MetalOoze)</Text>
-                        <Text color={'gray.500'}>{new Date(date).toUTCString()}</Text>
+                        <Text fontWeight={600}>ayan (metalooze05)</Text>
+                        <Text color={'gray.500'}>{new Date(date).toUTCString().toLowerCase()}</Text>
                     </Stack>
                 </Stack>
             </Box>

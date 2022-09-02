@@ -48,7 +48,7 @@ const Blog: React.FC = () => {
                         src={'https://avatars.githubusercontent.com/u/38457291'}
                     />
                     <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                        <Text fontWeight={600}>Ayan (MetalOoze)</Text>
+                        <Text fontWeight={600}>ayan (metalooze05)</Text>
                         <Text color={'gray.500'}>{new Date(1662028787988).toISOString()}</Text>
                     </Stack>
                 </Stack>

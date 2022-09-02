@@ -1,4 +1,4 @@
-import type { NextPage, NextComponentType } from 'next'
+import type { NextPage } from 'next'
 import {
   Flex,
   Text,
@@ -7,10 +7,15 @@ import {
 } from '@chakra-ui/react'
 import Blog from '../components/Blog'
 import Project from '../components/Project'
+import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>home • ayanprkr</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Flex direction={'column'} px={[6, 10, 14]} py={2} mt={8} mb={[0, 0, 8]} mx="auto">
  
         {/* HERO SECTION */}
