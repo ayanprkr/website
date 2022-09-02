@@ -72,8 +72,7 @@ const Home: NextPage = () => {
           </Text>
           <Flex direction={'column'} gap={4}>
               <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
-                <Blog />
-                <Blog />
+                
               </Flex>
           </Flex>
         </Flex>
