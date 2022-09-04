@@ -20,6 +20,9 @@ const Navbar: React.FC = () => {
                     <Link href="/blogs" passHref>
                         <Button as="a" variant='ghost'>blogs</Button>
                     </Link>
+                    <Link href="/guestbook" passHref>
+                        <Button as="a" variant='ghost'>guestbook</Button>
+                    </Link>
                 </Flex>
                     <Flex gap={5} direction={'row'} alignItems={'center'}>
                         <SpotifyWidget />

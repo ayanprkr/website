@@ -11,13 +11,16 @@ import {
 } from "@chakra-ui/react";
 
 type Props = {
-    url: string,
-    name: string,
-    desc?: string,
-    date: number
+    url: string;
+    repo: string;
+    description: string;
+    stars: string;
+    forks: string;
+    language: string;
+    languageColor?: string;
 };
 
-const Project: React.FC<Props> = ({ url, name, desc, date }) => {
+const Project: React.FC<Props> = ({ url, repo, stars, forks, description, language, languageColor }) => {
     return (
         <Center>
             <Box
@@ -35,17 +38,17 @@ const Project: React.FC<Props> = ({ url, name, desc, date }) => {
                         fontSize={['xs', 'sm', 'sm']}
                         letterSpacing={1.1}
                     >
-                        project
+                        {language}
                     </Text>
                     <Heading
                         fontSize={['lg', '2xl', '2xl']}
                         fontFamily={'body'}
                         textTransform={'lowercase'}
                     >
-                        <Link href={url}>{name}</Link>
+                        <Link href={url}>{repo}</Link>
                     </Heading>
                     <Text fontSize={['sm', 'lg', 'lg']} color={'gray.500'} textTransform={'lowercase'}>
-                        {desc}
+                        {description}
                     </Text>
                 </Stack>
                 <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
@@ -54,7 +57,7 @@ const Project: React.FC<Props> = ({ url, name, desc, date }) => {
                     />
                     <Stack direction={'column'} spacing={0} fontSize={'sm'}>
                         <Text fontWeight={600}>ayan (metalooze05)</Text>
-                        <Text color={'gray.500'}>{new Date(date).toUTCString().toLowerCase()}</Text>
+                        <Text color={'gray.500'}>stars: {stars}, forks: {forks}</Text>
                     </Stack>
                 </Stack>
             </Box>

@@ -1,16 +1,26 @@
-import type { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next';
 import {
   Flex,
   Text,
   Heading,
   Tag
 } from '@chakra-ui/react'
-import Blog from '../components/Blog'
 import Project from '../components/Project'
 import Head from 'next/head'
 
-const Home: NextPage = () => {
-  return (
+type PinnedRepo = {
+  owner: string;
+  repo: string;
+  description: string;
+  language: string;
+  languageColor: string;
+  stars: string;
+  forks: string;
+};
+
+
+const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
+    return (
     <>
       <Head>
         <title>home • ayanprkr</title>
@@ -58,9 +68,18 @@ const Home: NextPage = () => {
             here are some of the cool stuffs i make when i&apos;m lonely
           </Text>
           <Flex direction={'column'} gap={4}>
-              <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
-                <Project url="https://github.com/MetalOoze05/friday-api" name="friday api" desc="A REST API which provides you the information of any discord account including their Spotify &amp; VS-Code activity!" date={1662030878394} />
-                <Project url="https://github.com/MetalOoze05/dynamic-twitter-header" name="dynamic twitter header" desc="Fetches a quote from an external api and generates an image which can be uploaded to twitter as a profile banner." date={1662030878394} />
+              <Flex direction={'row'} alignItems="start" gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
+                {pinnedRepos.slice(0, 3).map((project) => (
+                    <Project 
+                      key={project.repo}
+                      url={`https://github.com/${project.owner}/${project.repo}`}
+                      repo={project.repo}
+                      description={project.description}
+                      language={project.language}
+                      stars={project.stars}
+                      forks={project.forks}
+                    />
+                  ))}
               </Flex>
           </Flex>
         </Flex>
@@ -71,8 +90,8 @@ const Home: NextPage = () => {
             currently cooking some...
           </Text>
           <Flex direction={'column'} gap={4}>
-              <Flex direction={'row'} gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
-                
+              <Flex direction={'row'} alignItems="start" gap={[2, 4, 4]} mt={[2, 4, 4]} wrap={'wrap'}>
+                  
               </Flex>
           </Flex>
         </Flex>
@@ -80,5 +99,19 @@ const Home: NextPage = () => {
     </>
   )
 }
- 
+
+export const getStaticProps: GetStaticProps = async () => {
+    const pinnedRepos = await fetch("https://gh-pinned-repos.egoist.sh/?username=metalooze05")
+      .then(async (response) => {
+        return await response.json();
+      })
+    
+      return {
+        props: {
+          pinnedRepos
+        },
+        revalidate: 3600
+      }
+}
+
 export default Home
