@@ -121,7 +121,8 @@ const GuestBook = () => {
                             {messages?.map((msg: any, index: any) => {
                                 return (
                                     <Box 
-                                        bg={useColorModeValue("white", "gray.900")}
+                                        key={index}
+                                        bg={"gray.900"}
                                         rounded={["sm", "md", "md"]}
                                         p={6}
                                         overflow={"hidden"}
@@ -150,7 +151,8 @@ const GuestBook = () => {
                 {messages?.map((msg: any, index: any) => {
                     return (
                         <Box 
-                            bg={useColorModeValue("gray.200", "gray.900")}
+                            key={index}
+                            bg={"gray.900"}
                             rounded={["sm", "md", "md"]}
                             p={6}
                             overflow={"hidden"}
