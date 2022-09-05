@@ -12,8 +12,8 @@ import SpotifyWidget from "./SpotifyWidget"
 const Navbar: React.FC = () => {
     return (
         <>
-            <Flex position='relative' top={0} flexDirection='row' justifyContent='space-between' alignItems='center' width='100%' as='nav' px={[6, 14, 14]} py={2} mt={8} mb={[0, 0, 8]} mx='auto' gap={10}>
-                <Flex gap={5}>
+            <Flex position='relative' top={0} flexDirection='row' wrap={"wrap"} justifyContent='space-between' alignItems='center' width='100%' as='nav' px={[6, 14, 14]} py={2} mt={8} mb={[0, 0, 8]} mx='auto' gap={[5, 10, 10]}>
+                <Flex gap={[2, 5, 5]}>
                     <Link href="/" passHref>
                         <Button as="a">home</Button>
                     </Link>

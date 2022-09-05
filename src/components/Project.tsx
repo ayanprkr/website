@@ -25,7 +25,7 @@ const Project: React.FC<Props> = ({ url, repo, stars, forks, description, langua
         <Center>
             <Box
                 maxW={["xs", "sm", "sm"]}
-                bg={useColorModeValue('white', 'gray.900')}
+                bg={useColorModeValue('gray.200', 'gray.900')}
                 rounded={["sm", "md", "md"]}
                 p={6}
                 overflow={'hidden'}
