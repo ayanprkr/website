@@ -110,6 +110,7 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
           pinnedRepos
         },
+        revalidate: 3600,
       }
 }
 
