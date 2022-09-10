@@ -8,15 +8,15 @@ import { Button, Input, Flex, Text, Box, useColorModeValue } from "@chakra-ui/re
 const Signature: React.FC<{ name: string, message: string }> = ({ name, message }) => {
     return (
         <div>
-            <Text>{message}</Text>
-            <Text color={"gray.500"}>~ {name}</Text>
+            <Text>{message.toLowerCase()}</Text>
+            <Text color={"gray.500"}>~ {name.toLowerCase()}</Text>
         </div>
     )
 }
 
 const LogOutBtn = () => {
     return (
-        <Button variant='outline' size={"sm"} colorScheme={"red"} onClick={() => signOut()}>Log Out</Button>
+        <Button variant='outline' size={"sm"} colorScheme={"red"} onClick={() => signOut()}>log out</Button>
     )
 }
 
@@ -68,7 +68,7 @@ const GuestBook = () => {
     };
 
     if (status === "loading") {
-        return <p>Loading...</p>
+        return <p>loading...</p>
     }
 
     if (session) {
@@ -86,7 +86,7 @@ const GuestBook = () => {
                                 style={{ borderRadius: "50%" }}
                             />
                             <Flex direction={"column"} alignItems="start" gap={1}>
-                                <Text fontSize={['sm', 'lg', 'lg']}>Signed in as: {session.user.name}</Text>
+                                <Text fontSize={['sm', 'lg', 'lg']}>signed in as: {session.user.name?.toLowerCase()}</Text>
                                 <LogOutBtn />
                             </Flex>
                         </Flex>
@@ -110,7 +110,7 @@ const GuestBook = () => {
                                     onClick={() => handleSubmit()}
                                     colorScheme={"green"}
                                 >
-                                    Comment
+                                    comment
                                 </Button>
                             </div>
 
@@ -141,9 +141,9 @@ const GuestBook = () => {
     return (
         <>
             <Flex direction={"column"} gap={2} mb={5}>
-                <Text fontSize={['sm', 'lg', 'lg']}>Log in with Discord to continue!</Text>
+                <Text fontSize={['sm', 'lg', 'lg']} textTransform="lowercase">Log in with Discord to continue!</Text>
                 <Button maxW={"fit-content"} variant="outline" colorScheme={"green"} onClick={() => signIn("discord")}>
-                    Log In
+                    log in
                 </Button>
             </Flex>
 

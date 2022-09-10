@@ -48,12 +48,12 @@ const SpotifyWidget: React.FC = () => {
                         <PopoverArrow />
                         <PopoverBody>
                             <Flex direction={'column'} alignItems={'left'} gap={5} p={3}>
-                                <Heading fontSize={['md', 'lg', 'lg']}>Currently Playing</Heading>
+                                <Heading fontSize={['md', 'lg', 'lg']}>currently playing</Heading>
                                 <Flex direction={'row'} alignItems={'center'} gap={5}>
                                     <Image src={data.data.spotify?.album_art_url} alt="ayan" height={100} width={100} />
                                     <Flex direction={'column'}>
-                                        <Text fontSize={['sm', 'md', 'md']} fontWeight={'bold'}>{data.data.spotify?.song.charAt(0).toUpperCase() + data.data.spotify?.song.slice(1)}</Text>
-                                        <Text fontWeight={'medium'} fontSize={'xs'} color={'gray.400'}>{data.data.spotify?.artist}</Text>
+                                        <Text fontSize={['sm', 'md', 'md']} fontWeight={'bold'}>{data.data.spotify?.song.toLowerCase()}</Text>
+                                        <Text fontWeight={'medium'} fontSize={'xs'} color={'gray.400'}>{data.data.spotify?.artist.toLowerCase()}</Text>
                                     </Flex>
                                 </Flex>
                             </Flex>
