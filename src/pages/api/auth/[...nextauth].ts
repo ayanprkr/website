@@ -14,7 +14,20 @@ export const authOptions = {
             clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
             authorization: { params: { scope: scopes } }
         })
-    ]
+    ],
+    callbacks: {
+        async signIn({ user, profile }: any) {
+            await prisma.user.update({
+                where: {
+                    id: user.id
+                },
+                data: {
+                    image: profile.image_url
+                }
+            })
+            return true
+        }
+    },
 }
 
 export default NextAuth(authOptions);

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React, { useState } from "react";
