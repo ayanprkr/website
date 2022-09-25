@@ -1,66 +1,38 @@
-import { ChakraProvider, Box, Skeleton, extendTheme, ThemeConfig } from '@chakra-ui/react'
-import type { AppProps } from 'next/app'
-import Navbar from '../components/Navabr'
-import useSWR from 'swr'
-import { NextComponentType } from 'next'
-import { SessionProvider } from 'next-auth/react'
-import superjson from "superjson"
-import { withTRPC } from '@trpc/next'
-import { AppRouter } from '~/server/router'
+// src/pages/_app.tsx
+import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
+import { loggerLink } from "@trpc/client/links/loggerLink";
+import { withTRPC } from "@trpc/next";
+import { SessionProvider } from "next-auth/react";
+import { useRouter } from "next/router";
+import superjson from "superjson";
+import type { AppType } from "next/app";
+import type { AppRouter } from "../server/router";
+import type { Session } from "next-auth";
+import "../styles/globals.css";
 
-const theme: ThemeConfig = extendTheme({
-  fonts: {
-    heading: 'IBM Ples Mono, monospace',
-    body: 'IBM Plex Mono, monospace',
-  },
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-})
+import Navbar from "../components/Navbar";
+import DiscordStatus from "../components/DiscordStatus";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json()) 
-
-const DiscordStatus: NextComponentType = () => {
-  const { data, error } = useSWR("/api/discord", fetcher)
-
-  if (error || !data) {
-    return (
-      <Box width={'full'} height={1}>
-        <Skeleton height={1}></Skeleton>
-      </Box>
-    )
-  }
+const MyApp: AppType<{ session: Session | null }> = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
+  const router = useRouter();
+  const path = router.route;
   
-  if (data.data.discord_status === "online") {
-    return <Box bg={'green.300'} width={'full'} height={1}/>
-  } else if (data.data.discord_status === "idle") {
-    return <Box bg={'yellow.300'} width={'full'} height={1}/>
-  } else if (data.data.discord_status === "dnd") {
-    return <Box bg={'red.300'} width={'full'} height={1}/>
-  } else {
-    return <Box width={'full'} height={1}><Skeleton height={1} /></Box>
-  }
-}
-
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {  
   return (
     <SessionProvider session={session}>
-      <ChakraProvider theme={theme}>
-        <DiscordStatus />
-        <Navbar />
-        <Component {...pageProps} />
-      </ChakraProvider>
+      <Navbar path={path as string} />
+      <Component {...pageProps} />
+      <DiscordStatus />
     </SessionProvider>
-  )
-}
+  );
+};
 
 const getBaseUrl = () => {
-  if (typeof window !== "undefined") {
-    return "";
-  }
-  if (process.browser) return "";
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-
-  return `http://localhost:${process.env.PORT ?? 3000}`;
+  if (typeof window !== "undefined") return ""; // browser should use relative url
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
+  return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
 export default withTRPC<AppRouter>({
@@ -72,9 +44,37 @@ export default withTRPC<AppRouter>({
     const url = `${getBaseUrl()}/api/trpc`;
 
     return {
+      links: [
+        loggerLink({
+          enabled: (opts) =>
+            process.env.NODE_ENV === "development" ||
+            (opts.direction === "down" && opts.result instanceof Error),
+        }),
+        httpBatchLink({ url }),
+      ],
       url,
       transformer: superjson,
+      /**
+       * @link https://react-query.tanstack.com/reference/QueryClient
+       */
+      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
+
+      // To use SSR properly you need to forward the client's headers to the server
+      // headers: () => {
+      //   if (ctx?.req) {
+      //     const headers = ctx?.req?.headers;
+      //     delete headers?.connection;
+      //     return {
+      //       ...headers,
+      //       "x-ssr": "1",
+      //     };
+      //   }
+      //   return {};
+      // }
     };
   },
+  /**
+   * @link https://trpc.io/docs/ssr
+   */
   ssr: false,
 })(MyApp);
