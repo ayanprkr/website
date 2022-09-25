@@ -1,8 +1,8 @@
 import type { NextPage, GetStaticProps } from "next";
 import { trpc } from "../utils/trpc";
 import { age } from "../utils/time";
-import Navbar from "../components/Navbar";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import { 
   SiJavascript,
@@ -49,7 +49,10 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
     };
 
     return (
-      <>            
+      <>       
+            <Head>
+                <title>Home - ayanprkr</title>  
+            </Head>     
             <div className="py-10 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5">
 
