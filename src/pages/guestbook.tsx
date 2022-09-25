@@ -33,7 +33,7 @@ const Form = () => {
         onMutate: () => {
             ctx.cancelQuery(["guestbook.getAll"]);
 
-            let optimisticUpdate = ctx.getQueryData(["guestbook.getAll"]);
+            const optimisticUpdate = ctx.getQueryData(["guestbook.getAll"]);
             if (optimisticUpdate) ctx.setQueryData(["guestbook.getAll"], optimisticUpdate);
         },
         onSettled: () => {
