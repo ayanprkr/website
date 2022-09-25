@@ -32,7 +32,7 @@ const Navbar: FC<Props> = ({ path }) => {
     )
     if (path === "/") {
         return (
-            <header className="sticky md:relative pt-10 px-14 md:px-20 flex justify-between items-center w-full top-0 gap-5">
+            <header className="sticky md:relative flex justify-between items-center w-full top-2 md:top-0 gap-5">
                 <div className="visible md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
                     <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
                 </div>

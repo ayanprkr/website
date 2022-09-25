@@ -10,8 +10,7 @@ import type { AppRouter } from "../server/router";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
 
-import Navbar from "../components/Navbar";
-import DiscordStatus from "../components/DiscordStatus";
+import Layout from "../components/Layout";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -22,9 +21,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   
   return (
     <SessionProvider session={session}>
-      <Navbar path={path as string} />
-      <Component {...pageProps} />
-      <DiscordStatus />
+      <Layout path={path as string}>
+        <Component {...pageProps} />
+      </Layout>
     </SessionProvider>
   );
 };
@@ -36,7 +35,7 @@ const getBaseUrl = () => {
 };
 
 export default withTRPC<AppRouter>({
-  config({ ctx }) {
+  config({ ctx }: any) {
     /**
      * If you want to use SSR, you need to use the server's full URL
      * @link https://trpc.io/docs/ssr

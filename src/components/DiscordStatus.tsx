@@ -43,7 +43,7 @@ const DiscordStatus = () => {
 
     if (data && data.data.discord_status !== "offline") {
         return (
-            <p className="pb-10 flex flex-row justify-center items-center gap-2 text-gray-400">
+            <p className="flex flex-row justify-center items-center gap-2 text-gray-400">
                 {icon}
                 {data.data.discord_user.username}#{data.data.discord_user.discriminator}
             </p>

@@ -50,11 +50,10 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
 
     return (
       <>            
-            <div className="p-14 md:p-20 flex flex-col justify-center items-center">
-                {/* HERO SECTION */}
-                <div className="flex flex-col gap-5 max-w-none md:max-w-7xl">
+            <div className="py-10 flex flex-col justify-center items-start">
+                <div className="flex flex-col gap-5">
 
-
+                    {/* HERO SECTION */}
                     {/* HEADING */}
                     <div className="space-y-5">
                         <h1 className="text-3xl md:text-5xl font-bold text-gray-300">Hey, <span className="text-transparent bg-gradient-to-r from-purple-500 to-red-500 bg-clip-text">I&apos;m Ayan :)</span></h1>
