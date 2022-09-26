@@ -8,7 +8,7 @@ import Image from "next/image";
 const Signature: React.FC<{ name: string, message: string, createdAt: string }> = ({ name, message, createdAt}) => {
     return (
         <div>
-            <p className="font-bold text-gray-300">{message}</p>
+            <p className="font-bold text-gray-300 text-wrap">{message}</p>
             <p className="text-gray-400 font-semibold">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
         </div>
     )
@@ -145,8 +145,8 @@ const Guestbook: NextPage = () => {
 
                     <Form />
 
-                    <div className="flex flex-col items-start pt-5 gap-5">
-                        {messages?.map((msg: any, index: any) => {
+                    <div className="flex flex-col flex-wrap items-start pt-5 gap-5">
+                        {messages?.map((msg: any, index: number) => {
                             return (
                                 <div key={index} className="flex flex-col justify-center items-center">
                                     <Signature key={index} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />

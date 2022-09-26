@@ -3,6 +3,7 @@ import Link from "next/link";
 import SpotifyWidget from "./SpotifyWidget";
 import { useRouter } from "next/router";
 import Hamburger from 'hamburger-react';
+import { motion } from "framer-motion";
 
 type Props = {
     path: string,
@@ -44,43 +45,85 @@ const Navbar: FC<Props> = ({ path }) => {
 
     if (path === "/") {
         return (
-            <header className="sticky md:relative flex justify-between items-center w-full top-2 md:top-0 gap-5">
-                <div className="visible md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
-                    <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
-                </div>
-                <nav className="hidden md:flex gap-5">
-                    {navLinks}
-                </nav>
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+                <div className="flex justify-between items-center gap-5 w-full">
+                    <div className="visible max-w-fit md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
+                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                    </div>
 
-                <SpotifyWidget />
+                    <div className="hidden md:flex gap-5">
+                        {navLinks}
+                    </div>
+                    
+                    <SpotifyWidget />
+                </div>
+                <div>
+                    {isOpen ?
+                        <motion.div initial={{ y: -100 }} animate={{ y: 0 }} exit={{ y: -100 }} className="absolute w-full bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg">
+                            <nav className="flex flex-col justify-center items-start p-5 gap-2">
+                                {navLinks}
+                            </nav>
+                        </motion.div>
+                    :
+                        <nav className="hidden"></nav>
+                    }
+                </div>
             </header>
         )
     } else if (path === "/guestbook") {
         return (
-            <header className="sticky md:relative flex justify-between items-center w-full top-2 md:top-0 gap-5">
-                <div className="visible md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
-                    <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
-                </div>
-                <nav className="hidden md:flex gap-5">
-                    {navLinksGuestbook}
-                </nav>
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+                <div className="flex justify-between items-center gap-5 w-full">
+                    <div className="visible max-w-fit md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
+                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                    </div>
 
-                <SpotifyWidget />
+                    <div className="hidden md:flex gap-5">
+                        {navLinksGuestbook}
+                    </div>
+                    
+                    <SpotifyWidget />
+                </div>
+                <div>
+                    {isOpen ?
+                        <motion.div initial={{ y: -100 }} animate={{ y: 0 }} exit={{ y: -100 }} className="absolute w-full bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg">
+                            <nav className="flex flex-col justify-center items-start p-5 gap-2">
+                                {navLinksGuestbook}
+                            </nav>
+                        </motion.div>
+                    :
+                        <nav className="hidden"></nav>
+                    }
+                </div>
             </header>
         )
     }
 
     return (
-        <header className="sticky md:relative flex justify-between items-center w-full top-2 md:top-0 gap-5">
-            <div className="visible md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
-                <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
-            </div>
-            <nav className="hidden md:flex gap-5">
-                {navLinks}
-            </nav>
+        <header className="sticky md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+                <div className="flex justify-between items-center gap-5 w-full">
+                    <div className="visible max-w-fit md:hidden bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg text-gray-500">
+                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                    </div>
 
-            <SpotifyWidget />
-        </header>
+                    <div className="hidden md:flex gap-5">
+                        {navLinks}
+                    </div>
+                    
+                    <SpotifyWidget />
+                </div>
+                <div>
+                    {isOpen ?
+                        <motion.div initial={{ y: -100 }} animate={{ y: 0 }} className="absolute w-full bg-neutral-900 bg-opacity-50 backdrop-blur-md rounded-lg">
+                            <nav className="flex flex-col justify-center items-start p-5 gap-2">
+                                {navLinks}
+                            </nav>
+                        </motion.div>
+                    :
+                        <nav className="hidden"></nav>
+                    }
+                </div>
+            </header>
     )
 }
 
