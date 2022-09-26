@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps } from "next";
-import { trpc } from "../utils/trpc";
 import { age } from "../utils/time";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -59,8 +58,8 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     {/* HERO SECTION */}
                     {/* HEADING */}
                     <div className="space-y-5">
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-300">Hey, <span className="text-transparent bg-gradient-to-r from-purple-500 to-red-500 bg-clip-text">I&apos;m Ayan :)</span></h1>
-                        <p className="text-md md:text-xl font-semibold text-gray-400">I&apos;m a <span className="font-semibold text-transparent bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text">{age.toPrecision(5)}</span> year old programming enthusiast residing in India, currently a student who is interested in Full-Stack Development including large scale frontend application and performant serverside code.</p>
+                        <h1 className="text-3xl md:text-5xl font-bold text-gray-300">Hey, <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">I&apos;m Ayan :)</span></h1>
+                        <p className="text-md md:text-xl font-semibold text-gray-400">I&apos;m a <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">{age.toPrecision(5)}</span> year old programming enthusiast residing in India, currently a student who is interested in Full-Stack Development including large scale frontend application and performant serverside code.</p>
                     </div>
 
                     <div className="pt-5"></div>
@@ -68,7 +67,7 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     {/* SKILLS */}
                     <div className="space-y-2">
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Technologies I Use</h1>
-                        <p className="text-md md:text-xl font-semibold text-gray-400">I use a wide range of tools to tackle each hurdle in the most efficient manner possible. <span className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text">I really love working with containersation</span>, especially Docker; it&apos;s proven to be a reliable bit of kit for both production and development environments.</p>
+                        <p className="text-md md:text-xl font-semibold text-gray-400">I use a wide range of tools to tackle each hurdle in the most efficient manner possible. <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">I really love working with containersation</span>, especially Docker; it&apos;s proven to be a reliable bit of kit for both production and development environments.</p>
                         <div className="pt-4 text-gray-300 text-xs md:text-lg font-semibold flex flex-row flex-wrap gap-1 md:gap-5 cursor-default">
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiJavascript />JavaScript</span>
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiTypescript />TypeScript</span>
@@ -92,12 +91,12 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     {/* PROJECTS */}
                     <div className="space-y-2">
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Repositories 🔬</h1>
-                        <p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-green-400 to-yellow-400 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>
+                        <p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>
                         <div className="pt-4 flex flex-row flex-wrap gap-5">
-                            {pinnedRepos?.slice(0, 5).map((project) => (
-                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={project.repo} className="cursor-pointer max-w-lg hover:bg-neutral-900 hover:bg-opacity-50 font-bold text-gray-400 rounded-lg border-2 border-neutral-900 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-start h-fit gap-2">
+                            {pinnedRepos?.slice(0, 3).map((project, index) => (
+                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer w-xl hover:bg-neutral-900 hover:bg-opacity-50 font-bold text-gray-400 rounded-lg border-2 border-neutral-900 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-start gap-2">
                                     <h1 className="text-md md:text-xl">{project.repo}</h1>
-                                    <p className="text-xs md:text-lg text-gray-500 font-normal">{project.description.slice(0, 50)}...</p>
+                                    <p className="text-xs md:text-lg text-gray-500 font-normal">{project.description}</p>
                                     <div className="text-xs md:text-lg flex flex-row gap-5">
                                         <span>⭐ {project.stars}</span>
                                         <span className="flex flex-row gap-2 justify-center items-center"><BiGitRepoForked /> {project.stars}</span>

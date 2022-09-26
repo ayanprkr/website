@@ -9,7 +9,8 @@ export const GuestBookRouter = createRouter()
                 return await ctx.prisma.guestbook.findMany({
                     select: {
                         name: true,
-                        message: true
+                        message: true,
+                        createdAt: true,
                     },
                     orderBy: {
                         createdAt: "desc"

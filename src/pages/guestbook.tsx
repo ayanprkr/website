@@ -5,11 +5,11 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Image from "next/image";
 
-const Signature: React.FC<{ name: string, message: string }> = ({ name, message}) => {
+const Signature: React.FC<{ name: string, message: string, createdAt: string }> = ({ name, message, createdAt}) => {
     return (
         <div>
-            <p className="font-bold text-gray-400">{message}</p>
-            <p className="text-gray-500">~ {name}</p>
+            <p className="font-bold text-gray-300">{message}</p>
+            <p className="text-gray-400 font-semibold">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
         </div>
     )
 }
@@ -58,7 +58,7 @@ const Form = () => {
 
         guestbook.mutate({
             name: session?.user?.name as string,
-            message
+            message,
         });
 
         setMessage("");
@@ -83,7 +83,7 @@ const Form = () => {
                                 className="rounded-lg"
                             />
                             <div className="flex flex-col items-start gap-2">
-                                <h1 className="md:text-xl font-bold text-gray-400">Signed in as <span className="text-transparent bg-gradient-to-r from-green-400 to-yellow-400 bg-clip-text">{session.user?.name}</span></h1>
+                                <h1 className="md:text-xl font-bold text-gray-400">Signed in as <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">{session.user?.name}</span></h1>
                                 <LogOutBTN />
                             </div>
                         </div>
@@ -98,11 +98,11 @@ const Form = () => {
                                 value={message}
                                 placeholder="Your Message..."
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="block w-full bg-transparent border-2 border-neutral-900 focus:border-green-500 outline-none px-4 py-2 rounded-lg"
+                                className="block w-full bg-transparent border-2 border-neutral-900 focus:border-cyan-500 outline-none px-4 py-2 rounded-lg"
                             />
                             <div className="flex flex-row justify-between">
                                 <p className="text-red-400">{error}</p>
-                                <p className="text-gray-500">{message.length}/100</p>
+                                <p className="font-semibold text-xs text-gray-600">{message.length}/100</p>
                             </div>
                         </div>
                         <div>
@@ -140,16 +140,16 @@ const Guestbook: NextPage = () => {
             </Head>
             <div className="py-10 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
-                    <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-purple-500 to-red-500 bg-clip-text">Guestbook</h1>
-                    <p className="text-md md:text-xl font-semibold text-gray-400">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
+                    <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Guestbook</h1>
+                    <p className="text-md md:text-xl font-semibold text-gray-400">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
 
                     <Form />
 
-                    <div className="flex flex-row flex-wrap items-start gap-x-3 gap-y-5 pt-5">
+                    <div className="flex flex-col items-start pt-5 gap-5">
                         {messages?.map((msg: any, index: any) => {
                             return (
-                                <div key={index} className="cursor-default flex flex-col justify-center items-center hover:bg-neutral-900 hover:bg-opacity-50 border-2 border-neutral-900 rounded-lg p-5 overflow-hidden transition duration-200">
-                                    <Signature key={index} name={msg.name} message={msg.message} />
+                                <div key={index} className="flex flex-col justify-center items-center">
+                                    <Signature key={index} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
                                 </div> 
                             )
                         })}
