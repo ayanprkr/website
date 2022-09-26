@@ -41,7 +41,7 @@ const DiscordStatus = () => {
         )
     }
 
-    if (data && data.data.discord_status !== "offline") {
+    if (data && data.data.discord_status) {
         return (
             <p className="flex flex-row justify-center items-center gap-2 text-gray-400">
                 {icon}
