@@ -24,7 +24,8 @@ import {
   TbBrandNextjs
 } from "react-icons/tb";
 import {
-  BiGitRepoForked
+  BiGitRepoForked,
+  BiStar
 } from "react-icons/bi";
 
 type PinnedRepo = {
@@ -98,8 +99,8 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                                     <h1 className="text-md md:text-xl">{project.repo}</h1>
                                     <p className="text-xs md:text-lg text-gray-500 font-normal">{project.description}</p>
                                     <div className="text-xs md:text-lg flex flex-row gap-5">
-                                        <span>⭐ {project.stars}</span>
-                                        <span className="flex flex-row gap-2 justify-center items-center"><BiGitRepoForked /> {project.stars}</span>
+                                        <span className="flex flex-row gap-2 justify-center items-center"><BiStar /> {project.stars}</span>
+                                        <span className="flex flex-row gap-2 justify-center items-center"><BiGitRepoForked /> {project.forks}</span>
                                     </div>
                                 </div>
                             ))}
