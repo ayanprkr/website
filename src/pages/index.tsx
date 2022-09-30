@@ -95,9 +95,9 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                         {/*<p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>*/}
                         <div className="pt-4 flex flex-row flex-wrap gap-5">
                             {pinnedRepos?.slice(0, 3).map((project, index) => (
-                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer w-xl hover:bg-neutral-900 hover:bg-opacity-50 font-bold text-gray-400 rounded-lg border-2 border-neutral-900 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-start gap-2">
+                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer max-w-xs hover:bg-sky-900 hover:bg-opacity-20 font-bold text-gray-400 rounded-lg border-2 border-sky-500 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-between gap-2">
                                     <h1 className="text-md md:text-xl">{project.repo}</h1>
-                                    <p className="text-xs md:text-lg text-gray-500 font-normal">{project.description}</p>
+                                    <p className="text-xs md:text-sm text-gray-500 font-normal">{project.description}</p>
                                     <div className="text-xs md:text-lg flex flex-row gap-5">
                                         <span className="flex flex-row gap-2 justify-center items-center"><BiStar /> {project.stars}</span>
                                         <span className="flex flex-row gap-2 justify-center items-center"><BiGitRepoForked /> {project.forks}</span>

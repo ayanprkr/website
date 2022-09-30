@@ -22,7 +22,7 @@ const About: NextPage = () => {
                         <br /><br />
                         In 2021, I started <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Web Development</span> but this time I was able to code without any help 😎.
                         <br />
-                        Later on I found out that web development is not just about HTML/CSS so I started learning React and made my first React website <span className="font-semibold text-transparent bg-gradient-to-r from-lime-500 to-green-500 bg-clip-text"><Link href="https://www.metalooze.xyz/" target="_blank">metalooze.xyz</Link></span>
+                        Later on I found out that web development is not just about HTML/CSS so I started learning React and made my first React website <span className="underline"><Link href="https://www.metalooze.xyz/" target="_blank">metalooze.xyz</Link></span>
                         <br /><br />
                         Before programming, I was also a Graphic Designer so yeah thats why my designs are so cool!
                     </p>
