@@ -9,7 +9,9 @@ import {
   SiPython,
   SiNuxtdotjs,
   SiTailwindcss,
-  SiMongodb
+  SiMongodb,
+  SiPrisma,
+  SiPostgresql
 } from "react-icons/si";
 import {
   FaGlobe,
@@ -84,6 +86,8 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiTailwindcss />TailwindCSS</span>
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaGitAlt />Git</span>
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiMongodb />MongoDB</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiPostgresql />PostgreSQL</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiPrisma />Prisma</span>
                         </div>
                     </div>
 
@@ -96,9 +100,9 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                         <div className="pt-4 flex flex-row flex-wrap gap-5">
                             {pinnedRepos?.slice(0, 3).map((project, index) => (
                                 <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer max-w-xs hover:bg-sky-900 hover:bg-opacity-20 font-bold text-gray-400 rounded-lg border-2 border-sky-500 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-between gap-2">
-                                    <h1 className="text-md md:text-xl">{project.repo}</h1>
-                                    <p className="text-xs md:text-sm text-gray-500 font-normal">{project.description}</p>
-                                    <div className="text-xs md:text-lg flex flex-row gap-5">
+                                    <h1 className="text-md md:text-xl text-gray-300">{project.repo}</h1>
+                                    <p className="text-xs md:text-sm text-gray-400 font-normal">{project.description}</p>
+                                    <div className="text-xs md:text-lg flex flex-row gap-5 text-gray-400">
                                         <span className="flex flex-row gap-2 justify-center items-center"><BiStar /> {project.stars}</span>
                                         <span className="flex flex-row gap-2 justify-center items-center"><BiGitRepoForked /> {project.forks}</span>
                                     </div>
