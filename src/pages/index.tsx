@@ -68,7 +68,7 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     {/* SKILLS */}
                     <div className="space-y-2">
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Technologies I Use</h1>
-                        <p className="text-md md:text-xl font-semibold text-gray-400">I use a wide range of tools to tackle each hurdle in the most efficient manner possible. <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">I really love working with containersation</span>, especially Docker; it&apos;s proven to be a reliable bit of kit for both production and development environments.</p>
+                        <p className="text-md md:text-xl font-semibold text-gray-400">I use a wide range of tools to tackle each hurdle in the most efficient manner possible.</p>
                         <div className="pt-4 text-gray-300 text-xs md:text-lg font-semibold flex flex-row flex-wrap gap-1 md:gap-5 cursor-default">
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiJavascript />JavaScript</span>
                             <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiTypescript />TypeScript</span>
@@ -92,7 +92,7 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     {/* PROJECTS */}
                     <div className="space-y-2">
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Repositories 🔬</h1>
-                        <p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>
+                        {/*<p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>*/}
                         <div className="pt-4 flex flex-row flex-wrap gap-5">
                             {pinnedRepos?.slice(0, 3).map((project, index) => (
                                 <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer w-xl hover:bg-neutral-900 hover:bg-opacity-50 font-bold text-gray-400 rounded-lg border-2 border-neutral-900 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-start gap-2">
