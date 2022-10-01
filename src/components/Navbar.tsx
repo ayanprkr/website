@@ -144,7 +144,7 @@ const Navbar: FC<Props> = ({ path }) => {
                 </div>
             </header>
         )
-    };
+    }
 
     return (
         <header className="sticky md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
