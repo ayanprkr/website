@@ -48,7 +48,7 @@ const DiscordStatus = () => {
                 <div className="flex flex-row gap-3 text-neutral-400">
                     <Link href="https://github.com/MetalOoze05"><a className="hover:text-neutral-300 transition duration-200"><FaGithub /></a></Link>
                     <Link href="https://twitter.com/ayxnxd"><a className="hover:text-neutral-300 transition duration-200"><FaTwitter /></a></Link>
-                    <Link href="https://twitter.com/ayanprkr"><a className="hover:text-neutral-300 transition duration-200"><FaInstagram /></a></Link>
+                    <Link href="https://instagram.com/ayanprkr"><a className="hover:text-neutral-300 transition duration-200"><FaInstagram /></a></Link>
                 </div>
                 <p className="flex flex-row justify-center items-center gap-2 text-neutral-400">
                     {icon}

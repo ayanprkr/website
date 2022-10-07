@@ -72,22 +72,22 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Technologies I Use</h1>
                         <p className="text-md md:text-xl font-semibold text-gray-400">I use a wide range of tools to tackle each hurdle in the most efficient manner possible.</p>
                         <div className="pt-4 text-gray-300 text-xs md:text-lg font-semibold flex flex-row flex-wrap gap-1 md:gap-5 cursor-default">
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiJavascript />JavaScript</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiTypescript />TypeScript</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiPython />Python</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaGlobe />HTML/CSS</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaDocker />Docker</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaNodeJs />Node.js</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaYarn />Yarn</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaReact />React.js</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><TbBrandNextjs />Next.js</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaVuejs />Vue</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiNuxtdotjs />Nuxt.js</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiTailwindcss />TailwindCSS</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><FaGitAlt />Git</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiMongodb />MongoDB</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiPostgresql />PostgreSQL</span>
-                            <span className="hover:bg-neutral-900 rounded-lg transition duration-200 px-3 py-2 flex flex-row items-center gap-2"><SiPrisma />Prisma</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiJavascript />JavaScript</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiTypescript />TypeScript</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiPython />Python</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaGlobe />HTML/CSS</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaDocker />Docker</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaNodeJs />Node.js</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaYarn />Yarn</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaReact />React.js</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><TbBrandNextjs />Next.js</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaVuejs />Vue</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiNuxtdotjs />Nuxt.js</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiTailwindcss />TailwindCSS</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><FaGitAlt />Git</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiMongodb />MongoDB</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiPostgresql />PostgreSQL</span>
+                            <span className="hover:bg-neutral-900 rounded-lg transition duration-300 px-3 py-2 flex flex-row items-center gap-2"><SiPrisma />Prisma</span>
                         </div>
                     </div>
 
@@ -98,8 +98,8 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                         <h1 className="text-xl md:text-2xl font-bold text-gray-300">Repositories 🔬</h1>
                         {/*<p className="text-md md:text-xl font-semibold text-gray-400">Here are some of the <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Cool Stuffs</span> I make when I&apos;m lonely.</p>*/}
                         <div className="pt-4 flex flex-row flex-wrap gap-5">
-                            {pinnedRepos?.slice(0, 3).map((project, index) => (
-                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer max-w-xs hover:bg-sky-900 hover:bg-opacity-20 font-bold text-gray-400 rounded-lg border-2 border-sky-500 hover:border-2 px-6 py-4 transition duration-300 flex flex-col justify-between gap-2">
+                            {pinnedRepos?.slice(0, 5).map((project, index) => (
+                                <div onClick={(e) => handleClick(e, `https://github.com/${project.owner}/${project.repo}/`)} key={index} className="cursor-pointer max-w-xs hover:bg-neutral-800 hover:bg-opacity-20 hover:shadow-neutral-500 hover:shadow-md font-bold text-gray-400 rounded-lg border-2 border-neutral-500 hover:border-2 px-6 py-4 transition duration-300 hover:-translate-y-1 flex flex-col justify-between gap-2">
                                     <h1 className="text-md md:text-xl text-gray-300">{project.repo}</h1>
                                     <p className="text-xs md:text-sm text-gray-400 font-normal">{project.description}</p>
                                     <div className="text-xs md:text-lg flex flex-row gap-5 text-gray-400">

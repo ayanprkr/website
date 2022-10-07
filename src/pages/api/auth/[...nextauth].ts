@@ -16,14 +16,29 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
     async signIn({ user, profile }: any) {
-      await prisma.user.update({
+      console.log(user);
+      console.log(profile);
+
+      const data = await prisma.user.findMany({
         where: {
-          id: user.id
-        },
-        data: {
-          image: profile.image_url
+          email: user.email
         }
       });
+
+      if (data.length > 0) {
+        console.log("old user");
+        await prisma.user.update({
+          where: {
+            email: user.email
+          },
+          data: {
+            image: profile.image_url
+          }
+        });
+        return true;
+      }
+
+      console.log("new user found");
       return true;
     }
   },
