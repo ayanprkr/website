@@ -5,7 +5,29 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Image from "next/image";
 
-const Signature: React.FC<{ name: string, message: string, createdAt: string }> = ({ name, message, createdAt}) => {
+const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt: string, email: string, session: any }> = ({ id, name, message, createdAt, email, session }) => {
+    if (session?.user?.email == email) {
+        const ctx = trpc.useContext();
+
+        const guestbook = trpc.useMutation("guestbook.delete", {
+            onMutate: () => {
+                ctx.cancelQuery(["guestbook.getAll"]);
+    
+                const optimisticUpdate = ctx.getQueryData(["guestbook.getAll"]);
+                if (optimisticUpdate) ctx.setQueryData(["guestbook.getAll"], optimisticUpdate);
+            },
+            onSettled: () => {
+                ctx.invalidateQueries(["guestbook.getAll"]);
+            }
+        });
+
+        return (
+            <div>
+                <p className="font-bold text-gray-300 text-wrap">{message}</p>
+                <p className="text-gray-400 font-semibold">~ {name} <span className="text-gray-600">/ {createdAt} / </span><button onClick={() => guestbook.mutate({ id: id })} className="text-red-500 font-light hover:underline">Delete</button></p>
+            </div>
+        )
+    }
     return (
         <div>
             <p className="font-bold text-gray-300 text-wrap">{message}</p>
@@ -21,8 +43,8 @@ const LogOutBTN = () => {
 }
 
 const Form = () => {
-    const { data: session, status } = useSession();
     
+    const { data: session, status } = useSession();
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -57,6 +79,7 @@ const Form = () => {
         }
 
         guestbook.mutate({
+            email: session?.user?.email as string,
             name: session?.user?.name as string,
             message,
         });
@@ -101,7 +124,7 @@ const Form = () => {
                                 className="block w-full bg-transparent border-2 border-neutral-900 focus:border-cyan-500 outline-none px-4 py-2 rounded-lg"
                             />
                             <div className="flex flex-row justify-between">
-                                <p className="text-red-400">{error}</p>
+                                <p className="text-red-500">{error}</p>
                                 <p className="font-semibold text-xs text-gray-600">{message.length}/100</p>
                             </div>
                         </div>
@@ -132,6 +155,7 @@ const Form = () => {
 }
 const Guestbook: NextPage = () => {
     const { data: messages } = trpc.useQuery(["guestbook.getAll"]);
+    const { data: session } = useSession();
 
     return (
         <>
@@ -147,9 +171,13 @@ const Guestbook: NextPage = () => {
 
                     <div className="flex flex-col flex-wrap items-start pt-5 gap-5">
                         {messages?.map((msg: any, index: number) => {
+                            if (msg.hidden) {
+                                return <div key={index} className="hidden"></div>
+                            }
+
                             return (
                                 <div key={index} className="flex flex-col justify-center items-center">
-                                    <Signature key={index} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
+                                    <Signature key={index} id={msg.id} session={session} email={msg.email} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
                                 </div> 
                             )
                         })}

@@ -8,7 +8,10 @@ export const GuestBookRouter = createRouter()
             try {
                 return await ctx.prisma.guestbook.findMany({
                     select: {
+                        id: true,
+                        email: true,
                         name: true,
+                        hidden: true,
                         message: true,
                         createdAt: true,
                     },
@@ -29,19 +32,40 @@ export const GuestBookRouter = createRouter()
     })
     .mutation("post", {
         input: z.object({
+            email: z.string(),
             name: z.string(),
-            message: z.string()
+            message: z.string(),
         }),
         async resolve({ ctx, input }) {
             try {
                 await ctx.prisma.guestbook.create({
                     data: {
+                        email: input.email,
                         name: input.name,
-                        message: input.message
+                        message: input.message,
                     }
                 });
             } catch (e) {
                 console.error(e);
             }
         }
-    });
+    })
+    .mutation("delete", {
+        input: z.object({
+            id: z.bigint()
+        }),
+        async resolve({ ctx, input }) {
+            try {
+                await ctx.prisma.guestbook.update({
+                    where: {
+                        id: input.id
+                    },
+                    data: {
+                        hidden: true
+                    }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    })

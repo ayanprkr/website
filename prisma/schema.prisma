@@ -48,13 +48,14 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String      @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?     @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
+    Guestbook     Guestbook[]
 }
 
 model VerificationToken {
@@ -66,8 +67,11 @@ model VerificationToken {
 }
 
 model Guestbook {
-    id        String   @id @default(cuid())
-    name      String
-    message   String   @db.Text
+    id        BigInt   @id @unique @default(autoincrement())
+    email     String   @db.VarChar(256)
+    name      String   @db.VarChar(256)
+    message   String   @db.VarChar(500)
     createdAt DateTime @default(now())
+    hidden    Boolean  @default(false)
+    user      User     @relation(fields: [email], references: [email], onDelete: Cascade)
 }
