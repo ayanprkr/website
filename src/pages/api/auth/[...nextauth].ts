@@ -5,6 +5,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "../../../server/db/client";
 import { env } from "../../../env/server.mjs";
+import chalk from "chalk";
 
 export const authOptions: NextAuthOptions = {
   // Include user.id on session
@@ -16,29 +17,20 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
     async signIn({ user, profile }: any) {
-      console.log(user);
-      console.log(profile);
-
-      const data = await prisma.user.findMany({
-        where: {
-          email: user.email
-        }
-      });
-
-      if (data.length > 0) {
-        console.log("old user");
+      try {
         await prisma.user.update({
           where: {
-            email: user.email
-          },
+            email: user.email,
+          }, 
           data: {
             image: profile.image_url
           }
         });
-        return true;
+        console.log(chalk.green("succesfully updated user's image!"));
+      } catch (e) {
+        console.log(chalk.green("new user found!"));
       }
 
-      console.log("new user found");
       return true;
     }
   },
