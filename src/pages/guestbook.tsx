@@ -4,8 +4,15 @@ import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+import {
+    BiTrash
+} from "react-icons/bi"
 
 const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt: string, email: string, session: any }> = ({ id, name, message, createdAt, email, session }) => {
+    const [isVisible, setVisible] = useState<boolean>(true);
+
     if (session?.user?.email == email) {
         const ctx = trpc.useContext();
 
@@ -21,18 +28,43 @@ const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt
             }
         });
 
+        const handleDelete = () => {
+            guestbook.mutate({ id })
+            setVisible(false);
+        };
+
         return (
-            <div>
-                <p className="font-bold text-gray-300 text-wrap">{message}</p>
-                <p className="text-gray-400 font-semibold">~ {name} <span className="text-gray-600">/ {createdAt} / </span><button onClick={() => guestbook.mutate({ id: id })} className="text-red-500 font-light hover:underline">Delete</button></p>
-            </div>
+            <AnimatePresence>
+                {isVisible && (
+                    <motion.div 
+                        key={"box"}
+                        initial={{ opacity: 0, x: 0  }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -300 }}
+                        className="box flex flex-col"
+                    >
+                        <p className="font-bold text-gray-300">{message}</p>
+                        <p className="text-gray-400 font-semibold flex flex-wrap items-center justify-start gap-2">~ {name}<span className="text-gray-600">/ {createdAt} /</span><button className="text-red-500 hover:text-red-400 transition duration-200" onClick={ () => handleDelete() }><BiTrash /></button></p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         )
     }
+
     return (
-        <div>
-            <p className="font-bold text-gray-300 text-wrap">{message}</p>
-            <p className="text-gray-400 font-semibold">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
-        </div>
+        <AnimatePresence>
+            <motion.div 
+                key={"box"}
+                initial={{ opacity: 0, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ ease: "easeInOut" }}
+                className="box flex flex-col"
+            >
+                <p className="font-bold text-gray-300 text-wrap">{message}</p>
+                <p className="text-gray-400 font-semibold flex flex-wrap items-center justify-start gap-2">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
+            </motion.div>
+        </AnimatePresence>
     )
 }
 
@@ -169,14 +201,14 @@ const Guestbook: NextPage = () => {
 
                     <Form />
 
-                    <div className="flex flex-col flex-wrap items-start pt-5 gap-5">
+                    <div className="flex flex-col flex-wrap items-start pt-5 gap-5 truncate md:overflow-visible text-ellipsis">
                         {messages?.map((msg: any, index: number) => {
                             if (msg.hidden) {
                                 return <div key={index} className="hidden"></div>
                             }
 
                             return (
-                                <div key={index} className="flex flex-col justify-center items-center">
+                                <div key={index} className="flex flex-col justify-center items-start max-w-xs md:max-w-none overflow-x-scroll md:overflow-visible">
                                     <Signature key={index} id={msg.id} session={session} email={msg.email} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
                                 </div> 
                             )
