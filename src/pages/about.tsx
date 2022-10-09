@@ -36,7 +36,7 @@ const About: NextPage = () => {
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                         {data?.tracks.map((track: TopTracks, index: number) => (
                             <div key={index} className="cursor-pointer flex flex-col md:flex-row gap-4 items-center w-xs min-w-xs max-w-xs border-neutral-500 border-2 hover:-translate-y-1 hover:bg-neutral-800 hover:bg-opacity-20 hover:shadow-neutral-500 hover:shadow-md font-bold text-gray-400 rounded-lg px-6 py-5 transiton duration-300">
-                                <Image className="rounded-lg" src={track.imageUrl} width={100} height={100} alt={track.artist} />
+                                <Image loading="lazy" className="rounded-lg" src={track.imageUrl} width={100} height={100} alt={track.artist} />
                                 <div>
                                     <h1 className="text-md md:text-xl text-gray-300">{track.title}</h1>
                                     <p className="text-xs md:text-sm text-gray-400 font-normal">{track.artist}</p>
