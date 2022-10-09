@@ -1,11 +1,11 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import chalk from "chalk";
 
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "../../../server/db/client";
 import { env } from "../../../env/server.mjs";
-import chalk from "chalk";
 
 export const authOptions: NextAuthOptions = {
   // Include user.id on session
@@ -21,10 +21,10 @@ export const authOptions: NextAuthOptions = {
         await prisma.user.update({
           where: {
             email: user.email,
-          }, 
+          },
           data: {
-            image: profile.image_url
-          }
+            image: profile.image_url,
+          },
         });
         console.log(chalk.green("succesfully updated user's image!"));
       } catch (e) {
@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
       }
 
       return true;
-    }
+    },
   },
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
