@@ -10,24 +10,22 @@ import {
     BiTrash
 } from "react-icons/bi"
 
-const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt: string, email: string, session: any }> = ({ id, name, message, createdAt, email, session }) => {
+const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt: string, email: string, session: any, ctx: any }> = ({ id, name, message, createdAt, email, session, ctx }) => {
     const [isVisible, setVisible] = useState<boolean>(true);
 
+    const guestbook = trpc.useMutation("guestbook.delete", {
+        onMutate: () => {
+            ctx.cancelQuery(["guestbook.getAll"]);
+
+            const optimisticUpdate = ctx.getQueryData(["guestbook.getAll"]);
+            if (optimisticUpdate) ctx.setQueryData(["guestbook.getAll"], optimisticUpdate);
+        },
+        onSettled: () => {
+            ctx.invalidateQueries(["guestbook.getAll"]);
+        }
+    });
+
     if (session?.user?.email == email) {
-        const ctx = trpc.useContext();
-
-        const guestbook = trpc.useMutation("guestbook.delete", {
-            onMutate: () => {
-                ctx.cancelQuery(["guestbook.getAll"]);
-    
-                const optimisticUpdate = ctx.getQueryData(["guestbook.getAll"]);
-                if (optimisticUpdate) ctx.setQueryData(["guestbook.getAll"], optimisticUpdate);
-            },
-            onSettled: () => {
-                ctx.invalidateQueries(["guestbook.getAll"]);
-            }
-        });
-
         const handleDelete = () => {
             guestbook.mutate({ id })
             setVisible(false);
@@ -74,14 +72,11 @@ const LogOutBTN = () => {
     )
 }
 
-const Form = () => {
+const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
     
-    const { data: session, status } = useSession();
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-
-    const ctx = trpc.useContext();
 
     const guestbook = trpc.useMutation("guestbook.post", {
         onMutate: () => {
@@ -92,7 +87,7 @@ const Form = () => {
         },
         onSettled: () => {
             ctx.invalidateQueries(["guestbook.getAll"]);
-        }
+        },
     });
 
     const handleSubmit = () => {
@@ -119,10 +114,6 @@ const Form = () => {
         setMessage("");
         setLoading(false);
     };
-
-    if (status === "loading") {
-        return <p className="text-gray-500">Loading...</p>
-    }
 
     if (session) {
         return (
@@ -188,6 +179,8 @@ const Form = () => {
 const Guestbook: NextPage = () => {
     const { data: messages } = trpc.useQuery(["guestbook.getAll"]);
     const { data: session } = useSession();
+    
+    const ctx = trpc.useContext();
 
     return (
         <>
@@ -199,7 +192,7 @@ const Guestbook: NextPage = () => {
                     <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Guestbook</h1>
                     <p className="text-md md:text-xl font-semibold text-gray-400">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
 
-                    <Form />
+                    <Form session={session} ctx={ctx} />
 
                     <div className="flex flex-col flex-wrap items-start pt-5 gap-5 truncate md:overflow-visible text-ellipsis">
                         {messages?.map((msg: any, index: number) => {
@@ -209,7 +202,7 @@ const Guestbook: NextPage = () => {
 
                             return (
                                 <div key={index} className="flex flex-col justify-center items-start max-w-xs md:max-w-none overflow-x-scroll md:overflow-visible">
-                                    <Signature key={index} id={msg.id} session={session} email={msg.email} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
+                                    <Signature key={index} ctx={ctx} id={msg.id} session={session} email={msg.email} name={msg.name} message={msg.message} createdAt={msg.createdAt.toString().slice(0, 16) as string} />
                                 </div> 
                             )
                         })}
