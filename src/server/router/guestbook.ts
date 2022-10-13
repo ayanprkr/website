@@ -17,6 +17,9 @@ export const GuestBookRouter = createRouter()
                     },
                     orderBy: {
                         createdAt: "desc"
+                    },
+                    where: {
+                        hidden: false
                     }
                 });
             } catch (e) {
