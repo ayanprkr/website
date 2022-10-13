@@ -17,9 +17,6 @@ export const GuestBookRouter = createRouter()
                     },
                     orderBy: {
                         createdAt: "desc"
-                    },
-                    where: {
-                        hidden: false
                     }
                 });
             } catch (e) {
@@ -55,9 +52,14 @@ export const GuestBookRouter = createRouter()
     })
     .mutation("delete", {
         input: z.object({
-            id: z.bigint()
+            id: z.bigint(),
+            email: z.string()
         }),
         async resolve({ ctx, input }) {
+            if (ctx.session?.user?.email !== input.email) {
+                throw new TRPCError({ code: "UNAUTHORIZED" });
+            }
+            
             try {
                 await ctx.prisma.guestbook.update({
                     where: {

@@ -27,7 +27,8 @@ const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt
 
     if (session?.user?.email == email) {
         const handleDelete = () => {
-            guestbook.mutate({ id })
+            guestbook.mutate({ id, email });
+
             setVisible(false);
         };
 
@@ -63,12 +64,6 @@ const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt
                 <p className="text-gray-400 font-semibold flex flex-wrap items-center justify-start gap-2">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
             </motion.div>
         </AnimatePresence>
-    )
-}
-
-const LogOutBTN = () => {
-    return (
-        <button className="text-xs font-bold text-red-300 bg-red-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-red-500 rounded-lg px-4 py-1 transition duration-300" onClick={() => signOut()}>Log Out</button>
     )
 }
 
@@ -130,7 +125,7 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
                             />
                             <div className="flex flex-col items-start gap-2">
                                 <h1 className="md:text-xl font-bold text-gray-400">Signed in as <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">{session.user?.name}</span></h1>
-                                <LogOutBTN />
+                                <button className="text-xs font-bold text-red-300 bg-red-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-red-500 rounded-lg px-4 py-1 transition duration-300" onClick={() => signOut()}>Log Out</button>
                             </div>
                         </div>
                     )}
@@ -171,7 +166,7 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
         <>
             <div className="flex flex-col items-start gap-3 pt-5">
                 <p className="text-md md:text-xl font-semibold text-gray-400">Log in with Discord to continue!</p>
-                <button className="text-sm font-bold text-green-300 bg-green-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-green-500 rounded-lg px-4 py-2 transition duration-300" onClick={() => signIn()}>Log In</button>
+                <button className="text-sm font-bold text-green-300 bg-green-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-green-500 rounded-lg px-4 py-2 transition duration-300" onClick={() => signIn("discord")}>Log In</button>
             </div>
         </>
     )
@@ -197,7 +192,7 @@ const Guestbook: NextPage = () => {
                     <div className="flex flex-col flex-wrap items-start pt-5 gap-5 truncate md:overflow-visible text-ellipsis">
                         {messages?.map((msg: any, index: number) => {
                             if (msg.hidden) {
-                                return <div key={index} className="hidden"></div>
+                                return 
                             }
 
                             return (
