@@ -42,6 +42,7 @@ type PinnedRepo = {
 
 const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
     const router = useRouter();
+
     const handleClick = (e: any, path: string) => {
         if (path) {
             router.push(path);
