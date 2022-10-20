@@ -42,8 +42,8 @@ const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt
                         exit={{ opacity: 0, x: -300 }}
                         className="box flex flex-col"
                     >
-                        <p className="font-bold text-gray-300">{message}</p>
-                        <p className="text-gray-400 font-semibold flex flex-wrap items-center justify-start gap-2">~ {name}<span className="text-gray-600">/ {createdAt} /</span><button className="text-red-500 hover:text-red-400 transition duration-200" onClick={ () => handleDelete() }><BiTrash /></button></p>
+                        <p className="font-bold text-neutral-300">{message}</p>
+                        <p className="text-neutral-400 flex flex-wrap items-center justify-start gap-2">~ {name}<span className="text-neutral-600">/ {createdAt} /</span><button className="text-red-500 hover:text-red-400 transition duration-200" onClick={ () => handleDelete() }><BiTrash /></button></p>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -60,8 +60,8 @@ const Signature: React.FC<{ id: bigint, name: string, message: string, createdAt
                 transition={{ ease: "easeInOut" }}
                 className="box flex flex-col"
             >
-                <p className="font-bold text-gray-300 text-wrap">{message}</p>
-                <p className="text-gray-400 font-semibold flex flex-wrap items-center justify-start gap-2">~ {name} <span className="text-gray-600">/ {createdAt}</span></p>
+                <p className="font-bold text-neutral-300 text-wrap">{message}</p>
+                <p className="text-neutral-400 flex flex-wrap items-center justify-start gap-2">~ {name} <span className="text-neutral-600">/ {createdAt}</span></p>
             </motion.div>
         </AnimatePresence>
     )
@@ -124,7 +124,7 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
                                 className="rounded-lg"
                             />
                             <div className="flex flex-col items-start gap-2">
-                                <h1 className="md:text-xl font-bold text-gray-400">Signed in as <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">{session.user?.name}</span></h1>
+                                <h1 className="md:text-xl text-neutral-300">Signed in as <span className="text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text font-semibold">{session.user?.name}</span></h1>
                                 <button className="text-xs font-bold text-red-300 bg-red-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-red-500 rounded-lg px-4 py-1 transition duration-300" onClick={() => signOut()}>Log Out</button>
                             </div>
                         </div>
@@ -139,11 +139,11 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
                                 value={message}
                                 placeholder="Your Message..."
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="block w-full bg-transparent border-2 border-neutral-900 focus:border-cyan-500 outline-none px-4 py-2 rounded-lg"
+                                className="text-neutral-300 block w-full bg-transparent border-2 border-neutral-900 focus:border-cyan-500 outline-none px-4 py-2 rounded-lg"
                             />
                             <div className="flex flex-row justify-between">
-                                <p className="text-red-500">{error}</p>
-                                <p className="font-semibold text-xs text-gray-600">{message.length}/100</p>
+                                <p className="text-xs text-red-500">{error}</p>
+                                <p className="font-semibold text-xs text-neutral-700">{message.length}/100</p>
                             </div>
                         </div>
                         <div>
@@ -163,9 +163,9 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
     }
 
     return (
-        <>
-            <div className="flex flex-col items-start gap-3 pt-5">
-                <p className="text-md md:text-xl font-semibold text-gray-400">Log in with Discord to continue!</p>
+        <>  
+            <div className="bg-neutral-900 rounded-lg px-6 py-4 flex flex-row items-center justify-between gap-3">
+                <p className="text-md md:text-lg text-neutral-300">Log in with Discord to continue!</p>
                 <button className="text-sm font-bold text-green-300 bg-green-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-green-500 rounded-lg px-4 py-2 transition duration-300" onClick={() => signIn("discord")}>Log In</button>
             </div>
         </>
@@ -182,14 +182,14 @@ const Guestbook: NextPage = () => {
             <Head>
                 <title>Guestbook - ayanprkr</title>
             </Head>
-            <div className="py-10 flex flex-col justify-center items-start">
+            <div className="py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
-                    <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">Guestbook</h1>
-                    <p className="text-md md:text-xl font-semibold text-gray-400">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
+                    <h1 className="text-3xl md:text-5xl font-black">Guestbook</h1>
+                    <p className="text-md md:text-lg text-neutral-300">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
 
                     <Form session={session} ctx={ctx} />
 
-                    <div className="flex flex-col flex-wrap items-start pt-5 gap-5 truncate md:overflow-visible text-ellipsis">
+                    <div className="flex flex-col flex-wrap items-start pt-2 gap-5 truncate md:overflow-visible text-ellipsis">
                         {messages?.map((msg: any, index: number) => {
                             if (msg.hidden) {
                                 return 

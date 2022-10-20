@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply bg-black text-gray-50
+    font-family: 'Lato', sans-serif;
+    @apply bg-gradient-to-tr from-neutral-900 to-black text-gray-50
 }
 
 *::selection {
-    @apply bg-teal-400 text-black
+    @apply bg-cyan-500 text-black
 }
 
 ::-webkit-scrollbar {
@@ -16,7 +19,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-black
+    @apply bg-transparent md:bg-black
 }
 
 ::-webkit-scrollbar-thumb {
