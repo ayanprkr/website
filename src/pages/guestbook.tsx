@@ -162,11 +162,27 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
         )
     }
 
+    if (!session) {
+        return (
+            <>  
+                <div className="bg-neutral-900 rounded-lg px-6 py-4 flex flex-row flex-wrap items-center justify-between gap-3">
+                    <p className="text-md md:text-lg text-neutral-300">Log in with Discord to continue!</p>
+                    <button className="text-sm font-bold text-green-300 bg-green-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-green-500 rounded-lg px-4 py-2 transition duration-300" onClick={() => signIn("discord")}>Log In</button>
+                </div>
+            </>
+        )
+    }
+
     return (
         <>  
-            <div className="bg-neutral-900 rounded-lg px-6 py-4 flex flex-row items-center justify-between gap-3">
+            <div className="bg-neutral-900 rounded-lg px-6 py-4 flex flex-row flex-wrap items-center justify-between gap-3">
                 <p className="text-md md:text-lg text-neutral-300">Log in with Discord to continue!</p>
-                <button className="text-sm font-bold text-green-300 bg-green-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-green-500 rounded-lg px-4 py-2 transition duration-300" onClick={() => signIn("discord")}>Log In</button>
+                <button className="text-sm font-bold text-neutral-300 bg-neutral-500 bg-opacity-20 hover:bg-opacity-50 border-2 border-neutral-500 rounded-lg px-4 py-2 transition duration-300">
+                    <svg className="mr-3 h-5 w-5 animate-spin text-neutral-300" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
             </div>
         </>
     )
@@ -182,7 +198,7 @@ const Guestbook: NextPage = () => {
             <Head>
                 <title>Guestbook - ayanprkr</title>
             </Head>
-            <div className="py-20 flex flex-col justify-center items-start">
+            <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
                     <h1 className="text-3xl md:text-5xl font-black">Guestbook</h1>
                     <p className="text-md md:text-lg text-neutral-300">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>

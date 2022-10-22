@@ -21,14 +21,25 @@ const About: NextPage = () => {
                 <title>About - ayanprkr</title>  
                 <link rel="preload" href="/api/getTopTracks" as="fetch" crossOrigin="anonymous"></link>
             </Head> 
-            <div className="py-20 flex flex-col justify-center items-start">
+            <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
                     <h1 className="text-3xl md:text-5xl font-black">About</h1>
                     <Image loading="lazy" width={1920} height={1080} className="rounded-lg" src="/placeholder-about.jpg" alt="metalooze" />
                     <p className="text-md md:text-lg text-neutral-300">
-                        Hi, I&apos;m Ayan, also known as <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">MetalOoze</span>.
-                        I&apos;m from and currently residing in Mumbai, India. I&apos;m also a full-stack developer who care about performant, accessible code. 
-                        I&apos;m a huge fan of maintaining and contributing open source repositories.
+                        I&apos;m a designer and a developer based in India, currently a student pursuing CS. I enjoy Automation and also interested in Full Stack Development!
+                        
+                        <br /><br />
+                        
+                        I have also been designing since 2019, I initially started by making twitter headers based on fortnite then started discovering other fields in it.
+                        White designing, I found out various bots on discord and always wanted to build them. In 2020 when the whole world was in a lockdown, I started programming (90% copy-paste) because I had a lot of time which I used to spend with my friends playing fortnite/valorant.
+                        
+                        <br /><br />
+
+                        Later on I started web development but then I was able to write 98% code by myself (2% code from stackoverflow ofc)!
+                        
+                        <br /><br />
+                        
+                        I have also been contributing to open source!
                     </p>
 
                     <h1 className="text-xl md:text-3xl font-black">Top Played Tracks</h1>

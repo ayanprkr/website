@@ -59,7 +59,7 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
             <Head>
                 <title>Home - ayanprkr</title>  
             </Head>     
-            <div className="py-20 flex flex-col justify-center items-start">
+            <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5">
 
                     {/* HERO SECTION */}
