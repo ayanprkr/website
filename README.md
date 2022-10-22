@@ -16,8 +16,8 @@
 This application requires Node.js to run.
 
 ```bash
-git clone https://github.com/ayanprkr/website.dev.git
-cd nexxel.dev
+git clone https://github.com/ayanprkr/website.git
+cd website
 yarn install
 yarn dev
 ```
