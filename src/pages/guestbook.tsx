@@ -201,7 +201,7 @@ const Guestbook: NextPage = () => {
             <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
                     <h1 className="text-3xl md:text-5xl font-black">Guestbook</h1>
-                    <p className="text-md md:text-lg text-neutral-300">Leave a comment below to be on my Guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
+                    <p className="text-md md:text-lg text-neutral-300">Leave a comment below to be on my guestbook forever! It could be literally anything, <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">a joke, a quote or even a cool fact.</span></p>
 
                     <Form session={session} ctx={ctx} />
 

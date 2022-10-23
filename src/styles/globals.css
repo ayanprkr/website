@@ -10,7 +10,7 @@ body {
 }
 
 *::selection {
-    @apply bg-cyan-500 text-black
+    @apply bg-neutral-900 text-neutral-300
 }
 
 ::-webkit-scrollbar {
