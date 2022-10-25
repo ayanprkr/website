@@ -18,7 +18,14 @@ export default async (req: NextRequest, res: NextResponse) => {
 
     return new ImageResponse(
       (
-        <div tw="bg-black h-full w-full flex flex-col items-center justify-center">
+        <div 
+          style={{
+            backgroundImage: 'radial-gradient(circle at 25px 25px, #171717 2%, transparent 0%), radial-gradient(circle at 75px 75px, #171717 2%, transparent 0%)',
+            backgroundSize: '100px 100px',
+          }}
+          
+          tw="bg-black h-full w-full flex flex-col items-center justify-center"
+        >
           <div tw="flex flex-col items-center justify-center">
             <img tw="shadow-lg shadow-purple-500/50 h-60 w-60 rounded-lg" src="https://avatars.githubusercontent.com/u/38457291?v=4" alt="face" />
             <h1 tw="text-center text-neutral-300 text-2xl font-bold">ayxn.xyz</h1>
