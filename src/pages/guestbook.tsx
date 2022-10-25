@@ -199,17 +199,14 @@ const Guestbook: NextPage = () => {
                 <title>Guestbook - ayanprkr</title>
                 
                 <meta property="title" content="Guestbook - ayxn" />
-                <meta property="description" content="A 16 year old programming enthusiast and a digital artist!" />
                 
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Guestbook - ayxn" />
-                <meta property="og:description" content="A 16 year old programming enthusiast and a digital artist!" />
                 <meta property="og:image" content="https://ayanprkr.vercel.app/api/og" /> 
 
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:title" content="Guestbook - ayxn" />
-                <meta property="twitter:description" content="A 16 year old programming enthusiast and a digital artist!" />
-                <meta property="twitter:image" content="https://ayanprkr.vercel.app/api/og?title=Guestbook" /> 
+                <meta property="twitter:image" content="https://ayanprkr.vercel.app/api/og" /> 
             </Head>
             <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
