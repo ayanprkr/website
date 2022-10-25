@@ -128,19 +128,19 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
     )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const pinnedRepos = await fetch("https://gh-pinned-repos.egoist.sh/?username=metalooze05")
-//     .then(async (res) => {
-//       return await res.json();
-//     });
+export const getStaticProps: GetStaticProps = async () => {
+  const pinnedRepos = await fetch("https://gh-pinned-repos.egoist.dev/?username=metalooze05")
+    .then(async (res) => {
+      return await res.json();
+    });
 
-//   return {
-//     props: {
-//       pinnedRepos
-//     }, 
-//     revalidate: 3600
-//   }
-// }
+  return {
+    props: {
+      pinnedRepos
+    }, 
+    revalidate: 3600
+  }
+}
 
 
 export default Home;
