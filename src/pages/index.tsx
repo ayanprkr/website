@@ -57,7 +57,8 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
     return (
       <>       
             <Head>
-                <title>Home - ayanprkr</title>  
+                <title>Home - ayanprkr</title> 
+                <meta property="og:image" content="https://ayanprkr.vercel.app/api/og" /> 
             </Head>     
             <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5">
@@ -119,19 +120,19 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const pinnedRepos = await fetch("https://gh-pinned-repos.egoist.sh/?username=metalooze05")
-    .then(async (res) => {
-      return await res.json();
-    });
+// export const getStaticProps: GetStaticProps = async () => {
+//   const pinnedRepos = await fetch("https://gh-pinned-repos.egoist.sh/?username=metalooze05")
+//     .then(async (res) => {
+//       return await res.json();
+//     });
 
-  return {
-    props: {
-      pinnedRepos
-    }, 
-    revalidate: 3600
-  }
-}
+//   return {
+//     props: {
+//       pinnedRepos
+//     }, 
+//     revalidate: 3600
+//   }
+// }
 
 
 export default Home;

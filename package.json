@@ -19,6 +19,7 @@
     "@trpc/react": "^9.27.2",
     "@trpc/server": "^9.27.2",
     "@types/three": "^0.144.0",
+    "@vercel/og": "^0.0.20",
     "chalk": "^5.1.0",
     "clsx": "^1.2.1",
     "framer-motion": "^7.3.6",
