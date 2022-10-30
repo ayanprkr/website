@@ -18,7 +18,7 @@ const About: NextPage = () => {
     return (
         <>
             <Head>
-                <title>About - ayanprkr</title>  
+                <title>About - ayxn</title>  
                 
                 <link rel="preload" href="/api/getTopTracks" as="fetch" crossOrigin="anonymous"></link>
 
