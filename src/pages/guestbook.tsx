@@ -117,6 +117,9 @@ const Form: React.FC<{ session: any, ctx: any }> = ({ session, ctx }) => {
                     {session.user?.image && (
                         <div className="flex flex-row items-center gap-5">
                             <Image
+                                loading="lazy"
+                                placeholder="blur"
+                                blurDataURL={session.user?.image}
                                 src={session.user?.image}
                                 alt={session.user?.name || "a"}
                                 width={80}

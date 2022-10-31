@@ -23,36 +23,50 @@ const Art: NextPage = () => {
                 <h1 className="text-3xl md:text-5xl font-black">Digital Arts</h1>
                 <p className="text-md md:text-lg text-neutral-300">Here are some of the <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text">super cool arts</span> designed by me!</p>
                 
-                <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-20">
+                <h1 className="mt-5 text-xl md:text-3xl font-black">Thumbnails</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-20">
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/optic.png" src={"/art/optic.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Optic Gaming</h2>
+                            <h2 className="text-xl">Optic Gaming Victory Card</h2>
                             <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
                         </div>
                     </div>
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/ixivalo.png" src={"/art/ixivalo.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Valorant</h2>
+                            <h2 className="text-xl">Cypher Valorant Thumbnail</h2>
                             <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
                         </div>
                     </div>
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/florida.png" src={"/art/florida.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Florida Mutineers</h2>
+                            <h2 className="text-xl">Florida Mutineers Victory Card</h2>
+                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <h1 className="mt-5 text-xl md:text-3xl font-black">Headers</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-20">
+                    <div>
+                        <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/nadeshot.png" src={"/art/nadeshot.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
+                        <div className="mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="text-xl">Nadeshot Twitter Hader</h2>
                             <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
                         </div>
                     </div>
                     <div>
-                        <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/nadeshot.png" src={"/art/nadeshot.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
+                        <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/mongraal.png" src={"/art/mongraal.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Nadeshot</h2>
+                            <h2 className="text-xl">Mongraal Twitter Header</h2>
                             <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
                         </div>
                     </div>
                 </div>
+
                 {/* <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/mongraal.png" src={"/art/mongraal.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
                 <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/alvi.png" src={"/art/alvi.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image> */}
             </div>
