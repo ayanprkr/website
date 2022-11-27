@@ -29,21 +29,33 @@ const Art: NextPage = () => {
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/optic.png" src={"/art/optic.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
                             <h2 className="text-xl">Optic Gaming Victory Card</h2>
-                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                            <p className="text-neutral-500">
+                                Dimensions: 1920 x 1080
+                                <br />
+                                Software: Adobe Photoshop CC 2021
+                            </p>
                         </div>
                     </div>
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/ixivalo.png" src={"/art/ixivalo.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
                             <h2 className="text-xl">Cypher Valorant Thumbnail</h2>
-                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                            <p className="text-neutral-500">
+                                Dimensions: 1920 x 1080
+                                <br />
+                                Software: Adobe Photoshop CC 2021
+                            </p>
                         </div>
                     </div>
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/florida.png" src={"/art/florida.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
                             <h2 className="text-xl">Florida Mutineers Victory Card</h2>
-                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                            <p className="text-neutral-500">
+                                Dimensions: 1920 x 1080
+                                <br />
+                                Software: Adobe Photoshop CC 2021
+                            </p>
                         </div>
                     </div>
                     
@@ -55,14 +67,22 @@ const Art: NextPage = () => {
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/nadeshot.png" src={"/art/nadeshot.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
                             <h2 className="text-xl">Nadeshot Twitter Hader</h2>
-                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                            <p className="text-neutral-500">
+                                Dimensions: 3000 x 1000
+                                <br />
+                                Software: Adobe Photoshop CC 2021
+                            </p>
                         </div>
                     </div>
                     <div>
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/mongraal.png" src={"/art/mongraal.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
                         <div className="mt-2 text-neutral-300 text-md text-left">
                             <h2 className="text-xl">Mongraal Twitter Header</h2>
-                            <p className="text-neutral-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius numquam cum animi dignissimos facere inventore architecto beatae aperiam a consectetur autem esse adipisci, soluta, asperiores vel nemo sed ipsam illum.</p>
+                            <p className="text-neutral-500">
+                                Dimensions: 3000 x 1000
+                                <br />
+                                Software: Adobe Photoshop CC 2021
+                            </p>
                         </div>
                     </div>
                 </div>
