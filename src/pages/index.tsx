@@ -103,7 +103,7 @@ const Home: NextPage<{ pinnedRepos: PinnedRepo[] }> = ({ pinnedRepos }) => {
                     <div className="space-y-2">
                         <h1 className="text-xl md:text-2xl font-black">Tech Stack</h1>
                         <p className="text-md md:text-lg text-gray-300">I use a wide range of tools to tackle each hurdle in the most efficient manner possible.</p>
-                        <div className="pt-4 text-gray-300 text-xs md:text-lg flex flex-row flex-wrap gap-x-10 gap-y-5">
+                        <div className="pt-4 text-gray-300 text-xs md:text-lg grid grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-5">
                             <span className="transition duration-300 flex flex-row items-center gap-2"><SiJavascript />JavaScript</span>
                             <span className="transition duration-300 flex flex-row items-center gap-2"><SiTypescript />TypeScript</span>
                             <span className="transition duration-300 flex flex-row items-center gap-2"><SiPython />Python</span>

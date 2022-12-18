@@ -25,37 +25,28 @@ const Art: NextPage = () => {
                 
                 <h1 className="mt-5 text-xl md:text-3xl font-black">Thumbnails</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-20">
-                    <div>
+                    <div className="relative">
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/optic.png" src={"/art/optic.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
-                        <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Optic Gaming Victory Card</h2>
-                            <p className="text-neutral-500">
-                                Dimensions: 1920 x 1080
-                                <br />
-                                Software: Adobe Photoshop CC 2021
-                            </p>
+                        <div className="w-full mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="rounded-lg bg-neutral-900 bg-opacity-50 backdrop-blur-md absolute left-2 bottom-5 p-2 text-xs md:text-xl">
+                                Optic Gaming Victory Card
+                            </h2>
                         </div>
                     </div>
-                    <div>
+                    <div className="relative">
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/ixivalo.png" src={"/art/ixivalo.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
-                        <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Cypher Valorant Thumbnail</h2>
-                            <p className="text-neutral-500">
-                                Dimensions: 1920 x 1080
-                                <br />
-                                Software: Adobe Photoshop CC 2021
-                            </p>
+                        <div className="w-full mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="rounded-lg bg-neutral-900 bg-opacity-50 backdrop-blur-md absolute left-2 bottom-5 p-2 text-xs md:text-xl">
+                                Cypher Valorant Thumbnail
+                            </h2>
                         </div>
                     </div>
-                    <div>
+                    <div className="relative">
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/florida.png" src={"/art/florida.png"} loading="lazy" width="1280" height={"720"} alt="optic gaming"></Image>
-                        <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Florida Mutineers Victory Card</h2>
-                            <p className="text-neutral-500">
-                                Dimensions: 1920 x 1080
-                                <br />
-                                Software: Adobe Photoshop CC 2021
-                            </p>
+                        <div className="w-full mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="rounded-lg bg-neutral-900 bg-opacity-50 backdrop-blur-md absolute left-2 bottom-6 p-2 text-xs md:text-xl">
+                                Florida Mutineers Victory Card
+                            </h2>
                         </div>
                     </div>
                     
@@ -63,26 +54,20 @@ const Art: NextPage = () => {
 
                 <h1 className="mt-5 text-xl md:text-3xl font-black">Headers</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-20">
-                    <div>
+                    <div className="relative">
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/nadeshot.png" src={"/art/nadeshot.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
-                        <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Nadeshot Twitter Hader</h2>
-                            <p className="text-neutral-500">
-                                Dimensions: 3000 x 1000
-                                <br />
-                                Software: Adobe Photoshop CC 2021
-                            </p>
+                        <div className="w-full mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="rounded-lg bg-neutral-900 bg-opacity-50 backdrop-blur-md absolute left-2 bottom-5 p-2 text-xs md:text-xl">
+                                Nadeshot Twitter Hader
+                            </h2>
                         </div>
                     </div>
-                    <div>
+                    <div className="relative">
                         <Image className="rounded-lg" placeholder="blur" blurDataURL="/art/mongraal.png" src={"/art/mongraal.png"} loading="lazy" width="3000" height={"1000"} alt="optic gaming"></Image>
-                        <div className="mt-2 text-neutral-300 text-md text-left">
-                            <h2 className="text-xl">Mongraal Twitter Header</h2>
-                            <p className="text-neutral-500">
-                                Dimensions: 3000 x 1000
-                                <br />
-                                Software: Adobe Photoshop CC 2021
-                            </p>
+                        <div className="w-full mt-2 text-neutral-300 text-md text-left">
+                            <h2 className="rounded-lg bg-neutral-900 bg-opacity-50 backdrop-blur-md absolute left-2 bottom-5 p-2 text-xs md:text-xl">
+                                Mongraal Twitter Header
+                            </h2>
                         </div>
                     </div>
                 </div>
