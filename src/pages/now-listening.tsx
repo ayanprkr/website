@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import { useState, useEffect } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 
 import { FaSpotify } from "react-icons/fa";
 

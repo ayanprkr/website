@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import useSWR from "swr";
 
 type TopTracks = {

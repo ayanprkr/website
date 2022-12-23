@@ -32,9 +32,9 @@ const DiscordStatus = () => {
         return (
             <div className="flex flex-col justify-center items-center gap-2">
                 <div className="flex flex-row gap-3 text-neutral-400">
-                    <Link href="https://github.com/MetalOoze05"><a className="hover:text-neutral-300 transition duration-200"><FaGithub /></a></Link>
-                    <Link href="https://twitter.com/ayxnxd"><a className="hover:text-neutral-300 transition duration-200"><FaTwitter /></a></Link>
-                    <Link href="https://instagram.com/ayanprkr"><a className="hover:text-neutral-300 transition duration-200"><FaInstagram /></a></Link>
+                    <Link href="https://github.com/MetalOoze05" className="hover:text-neutral-300 transition duration-200"><FaGithub /></Link>
+                    <Link href="https://twitter.com/ayxnxd" className="hover:text-neutral-300 transition duration-200"><FaTwitter /></Link>
+                    <Link href="https://instagram.com/ayanprkr" className="hover:text-neutral-300 transition duration-200"><FaInstagram /></Link>
                 </div>
                 <p className="flex flex-row justify-center items-center gap-2 text-neutral-400">
                     {icon}
