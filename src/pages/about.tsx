@@ -35,26 +35,13 @@ const About: NextPage = () => {
             <div className="py-10 md:py-20 flex flex-col justify-center items-start">
                 <div className="flex flex-col gap-5 w-full">
                     <h1 className="text-3xl md:text-5xl font-black">About</h1>
-                    <Image placeholder="blur" blurDataURL="/placeholder-about.jpg" loading="lazy" width={1920} height={1080} className="rounded-lg" src="/placeholder-about.jpg" alt="metalooze" />
+                    {/* <Image placeholder="blur" blurDataURL="/placeholder-about.jpg" loading="lazy" width={1920} height={1080} className="rounded-lg" src="/placeholder-about.jpg" alt="metalooze" /> */}
                     <p className="text-md md:text-lg text-neutral-300">
-                        I&apos;m a designer and a developer based in India, currently a student pursuing CS. I enjoy Automation and also interested in Full Stack Development!
-                        
-                        <br /><br />
-                        
-                        I have also been designing since 2019, I initially started by making twitter headers based on fortnite then started discovering other fields in it.
-                        White designing, I found out various bots on discord and always wanted to build them. In 2020 when the whole world was in a lockdown, I started programming (90% copy-paste) because I had a lot of time which I used to spend with my friends playing fortnite/valorant.
-                        
-                        <br /><br />
-
-                        Later on I started web development but then I was able to write 98% code by myself (2% code from stackoverflow ofc)
-                        
-                        <br />
-
-                        Since then I have been discovering many things in web development by creating basic full stack applications using Next.js
+                        I am a designer and developer based in India, currently pursuing a degree in computer science. I have a passion for automation and am interested in full stack development. My journey in design and programming began with creating Twitter headers and discovering bots on Discord, and has since evolved into building full stack applications using Next.js.
 
                         <br /><br />
-
-                        I built this website while learning full stack and was successfully able to deploy it with a working backend for Guestbook!
+                        
+                        I am determined to succeed and am always eager to continue learning and growing in my field. My ability to create and deploy a functioning website with a working backend is a testament to my dedication and hard work. I am confident in my abilities and believe that I will continue to achieve great things in my studies and professional career.
                     </p>
 
                     <h1 className="text-xl md:text-3xl font-black">Top Played Tracks</h1>
