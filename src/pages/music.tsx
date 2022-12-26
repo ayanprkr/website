@@ -51,7 +51,7 @@ const Music: NextPage<Data> = ({ topTracks, topArtists }) => {
                 <h1 className="mt-5 text-xl md:text-3xl font-black">Top Tracks ~ 12</h1>
                 <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-5">
                     {topTracks?.map((track: any, index: number) => (
-                        <div key={index} className="w-full flex flex-col items-start justify-center border-neutral-500 border-2 hover:-translate-y-1 hover:bg-neutral-800 hover:bg-opacity-20 hover:shadow-neutral-500 hover:shadow-md font-bold text-gray-400 rounded-lg p-5 transiton duration-300">
+                        <div key={index} className="w-full flex flex-col items-start justify-center bg-neutral-900 border-neutral-800 hover:border-neutral-500 border-2 font-bold text-gray-400 rounded-lg p-5 transiton duration-300">
                             <h1 className="text-md md:text-xl text-gray-300">{track.name}</h1>
                             <p className="text-xs md:text-sm text-gray-400 font-normal">playcount: {track.playcount}</p>
                         </div>
@@ -61,7 +61,7 @@ const Music: NextPage<Data> = ({ topTracks, topArtists }) => {
                 <h1 className="mt-5 text-xl md:text-3xl font-black">Top Artists ~ 15</h1>
                 <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-5">
                     {topArtists?.map((artist: any, index: number) => (
-                        <div key={index} className="w-full flex flex-col items-start justify-center border-neutral-500 border-2 hover:-translate-y-1 hover:bg-neutral-800 hover:bg-opacity-20 hover:shadow-neutral-500 hover:shadow-md font-bold text-gray-400 rounded-lg p-5 transiton duration-300">
+                        <div key={index} className="w-full flex flex-col items-start justify-center bg-neutral-900 border-neutral-800 hover:border-neutral-500 border-2 font-bold text-gray-400 rounded-lg p-5 transiton duration-300">
                             <h1 className="text-md md:text-xl text-gray-300">{artist.name}</h1>
                             <p className="text-xs md:text-sm text-gray-400 font-normal">playcount: {artist.playcount}</p>
                         </div>

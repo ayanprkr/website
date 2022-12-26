@@ -23,13 +23,13 @@ const Navbar: FC<Props> = ({ path }) => {
 
     const navLinks = (
         <>
-            <button onClick={(e) => handleClick(e, "/")} className="bg-neutral-900 text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/")} className="bg-neutral-900 text-sm md:text-md text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/">Home</Link>
             </button>
-            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/about">About</Link>    
             </button>
-            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/guestbook">Guestbook</Link>    
             </button>
         </>
@@ -37,13 +37,13 @@ const Navbar: FC<Props> = ({ path }) => {
 
     const navLinkAbout = (
         <>
-            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/">Home</Link>
             </button>
-            <button onClick={(e) => handleClick(e, "/about")} className="bg-neutral-900 text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/about")} className="bg-neutral-900 text-sm md:text-md text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/about">About</Link>    
             </button>
-            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/guestbook">Guestbook</Link>    
             </button>
         </>
@@ -51,13 +51,13 @@ const Navbar: FC<Props> = ({ path }) => {
 
     const navLinksGuestbook = (
         <>
-            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/">Home</Link>
             </button>
-            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/about">About</Link>    
             </button>
-            <button onClick={(e) => handleClick(e, "/guestbook")} className="bg-neutral-900 text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/guestbook")} className="bg-neutral-900 text-sm md:text-md text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/guestbook">Guestbook</Link>    
             </button>
         </>
@@ -65,27 +65,44 @@ const Navbar: FC<Props> = ({ path }) => {
 
     const navLinksArt = (
         <>
-            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/">Home</Link>
             </button>
-            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/about">About</Link>    
             </button>
-            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/guestbook">Guestbook</Link>    
             </button>
-            <button onClick={(e) => handleClick(e, "/art")} className="bg-neutral-900 text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
+            <button onClick={(e) => handleClick(e, "/art")} className="bg-neutral-900 text-sm md:text-md text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
                 <Link href="/art">Art</Link>    
+            </button>
+        </>
+    )
+
+    const navLinksMusic = (
+        <>
+            <button onClick={(e) => handleClick(e, "/")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+                <Link href="/">Home</Link>
+            </button>
+            <button onClick={(e) => handleClick(e, "/about")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+                <Link href="/about">About</Link>    
+            </button>
+            <button onClick={(e) => handleClick(e, "/guestbook")} className="hover:bg-neutral-900 text-sm md:text-md text-neutral-500 rounded-lg transition duration-200 px-4 py-2">
+                <Link href="/guestbook">Guestbook</Link>    
+            </button>
+            <button onClick={(e) => handleClick(e, "/music")} className="bg-neutral-900 text-sm md:text-md text-neutral-300 rounded-lg transition duration-200 px-4 py-2">
+                <Link href="/music">Music</Link>    
             </button>
         </>
     )
 
     if (path === "/") {
         return (
-            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
                 <div className="flex justify-between items-center gap-5 w-full">
-                    <div className="visible max-w-fit md:hidden bg-neutral-900 backdrop-blur-lg rounded-lg text-neutral-500">
-                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                    <div className="visible max-w-fit md:hidden rounded-lg text-neutral-500">
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
                     </div>
 
                     <div className="hidden md:flex gap-5">
@@ -117,10 +134,10 @@ const Navbar: FC<Props> = ({ path }) => {
         )
     } else if (path === "/about") {
         return (
-            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
                 <div className="flex justify-between items-center gap-5 w-full">
                     <div className="visible max-w-fit md:hidden bg-neutral-900 backdrop-blur-lg rounded-lg text-neutral-500">
-                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
                     </div>
 
                     <div className="hidden md:flex gap-5">
@@ -151,10 +168,10 @@ const Navbar: FC<Props> = ({ path }) => {
         )
     } else if (path === "/guestbook") {
         return (
-            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
                 <div className="flex justify-between items-center gap-5 w-full">
                     <div className="visible max-w-fit md:hidden bg-neutral-900 backdrop-blur-lg rounded-lg text-neutral-500">
-                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
                     </div>
 
                     <div className="hidden md:flex gap-5">
@@ -185,10 +202,10 @@ const Navbar: FC<Props> = ({ path }) => {
         )
     } else if (path === "/art") {
         return (
-            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
                 <div className="flex justify-between items-center gap-5 w-full">
                     <div className="visible max-w-fit md:hidden bg-neutral-900 backdrop-blur-lg rounded-lg text-neutral-500">
-                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
                     </div>
 
                     <div className="hidden md:flex gap-5">
@@ -217,13 +234,47 @@ const Navbar: FC<Props> = ({ path }) => {
                 </AnimatePresence>
             </header>
         )  
+    } else if (path === "/music") {
+        return (
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
+                <div className="flex justify-between items-center gap-5 w-full">
+                    <div className="visible max-w-fit md:hidden rounded-lg text-neutral-500">
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
+                    </div>
+
+                    <div className="hidden md:flex gap-5">
+                        {navLinksMusic}
+                    </div>
+                    
+                    <SpotifyWidget />
+                </div>
+                <AnimatePresence>
+                    {isOpen ? (
+                        <motion.div 
+                            key={"box"}
+                            initial={{ y: -300 }} 
+                            animate={{ y: 70 }} 
+                            exit={{ y: -300 }} 
+                            transition={{  ease: "easeInOut" }}
+                            className="box absolute w-full bg-neutral-900 backdrop-blur-lg rounded-lg">
+                                <nav className="flex flex-col justify-center items-start p-5 gap-2">
+                                    {navLinksMusic}
+                                </nav>
+                        </motion.div>
+                    )
+                    :
+                    <nav className="hidden"></nav>
+                }
+                </AnimatePresence>
+            </header>
+        )  
     }
 
     return (
-        <header className="sticky md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0">
+            <header className="sticky z-10 md:relative flex md:flex-row flex-col gap-5 w-full top-3 md:top-0 bg-neutral-900 rounded-lg md:bg-transparent">
                 <div className="flex justify-between items-center gap-5 w-full">
                     <div className="visible max-w-fit md:hidden bg-neutral-900 backdrop-blur-lg rounded-lg text-neutral-500">
-                        <Hamburger size={20} toggled={isOpen} toggle={setOpen} rounded />
+                        <Hamburger size={15} toggled={isOpen} toggle={setOpen} rounded />
                     </div>
 
                     <div className="hidden md:flex gap-5">

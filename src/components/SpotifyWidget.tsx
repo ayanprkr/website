@@ -9,7 +9,7 @@ const SpotifyWidget = () => {
 
     if (!loading && status?.spotify !== null) {
         return (
-            <div className="bg-green-900 backdrop-blur-md rounded-lg px-4 py-2 max-w-fit text-xs md:text-sm">
+            <div className="md:bg-green-900 backdrop-blur-md rounded-lg px-4 py-2 max-w-fit text-xs md:text-sm">
                 <div className="flex flex-row justify-center items-center gap-3 text-green-300">
                     <FaSpotify />
                     <p className="">Listening to {status?.spotify?.song}</p>
